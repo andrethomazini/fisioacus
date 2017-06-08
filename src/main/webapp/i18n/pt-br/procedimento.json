@@ -1,0 +1,23 @@
+{
+    "fisioacusApp": {
+        "procedimento" : {
+            "home": {
+                "title": "Procedimentos",
+                "createLabel": "Criar novo Procedimento",
+                "createOrEditLabel": "Criar ou editar Procedimento"
+            },
+            "created": "Um novo Procedimento é criado com o identificador {{ param }}",
+            "updated": "Um Procedimento é atualizado com o identificador {{ param }}",
+            "deleted": "Um Procedimento é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Procedimento {{ id }}?"
+            },
+            "detail": {
+                "title": "Procedimento"
+            },
+            "descricao": "Descricao",
+            "duration": "Duration",
+            "cid": "Cid"
+        }
+    }
+}

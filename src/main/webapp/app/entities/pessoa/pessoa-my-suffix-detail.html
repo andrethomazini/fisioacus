@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="fisioacusApp.pessoa.detail.title">Pessoa</span> {{vm.pessoa.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="fisioacusApp.pessoa.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.pessoa.nome}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.telefone">Telefone</span></dt>
+        <dd>
+            <span>{{vm.pessoa.telefone}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.celular">Celular</span></dt>
+        <dd>
+            <span>{{vm.pessoa.celular}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.endereco">Endereco</span></dt>
+        <dd>
+            <span>{{vm.pessoa.endereco}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.pessoa.numero}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.complemento">Complemento</span></dt>
+        <dd>
+            <span>{{vm.pessoa.complemento}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.cep">Cep</span></dt>
+        <dd>
+            <span>{{vm.pessoa.cep}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.contato">Contato</span></dt>
+        <dd>
+            <span>{{vm.pessoa.contato}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.dtNascimento">Dt Nascimento</span></dt>
+        <dd>
+            <span>{{vm.pessoa.dtNascimento | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.genero">Genero</span></dt>
+        <dd>
+            <span data-translate="{{'fisioacusApp.Genero.' + vm.pessoa.genero}}">{{vm.pessoa.genero}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.email">Email</span></dt>
+        <dd>
+            <span>{{vm.pessoa.email}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.pessoa.cidade">Cidade</span></dt>
+        <dd>
+            <a ui-sref="cidade-my-suffix-detail({id:vm.pessoa.cidadeId})">{{vm.pessoa.cidadeDescricao}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pessoa-my-suffix-detail.edit({id:vm.pessoa.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySessaoLabel" data-translate="fisioacusApp.sessao.home.createOrEditLabel">Create or edit a Sessao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.sessao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.sessao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.sessao.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.sessao.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.sessao.dtInicio" for="field_dtInicio">Dt Inicio</label>
+                <div class="input-group">
+                    <input id="field_dtInicio" type="text" class="form-control" name="dtInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.sessao.dtInicio" is-open="vm.datePickerOpenStatus.dtInicio"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtInicio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dtInicio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dtInicio.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="fisioacusApp.sessao.profissional" for="field_profissional">Profissional</label>
+            <select class="form-control" id="field_profissional" name="profissional" ng-model="vm.sessao.profissionalId" ng-options="profissional.id as profissional.id for profissional in vm.profissionals"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="fisioacusApp.sessao.atendimento" for="field_atendimento">Atendimento</label>
+            <select class="form-control" id="field_atendimento" name="atendimento" ng-model="vm.sessao.atendimentoId" ng-options="atendimento.id as atendimento.id for atendimento in vm.atendimentos"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

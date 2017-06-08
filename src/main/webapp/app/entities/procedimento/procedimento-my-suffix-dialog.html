@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProcedimentoLabel" data-translate="fisioacusApp.procedimento.home.createOrEditLabel">Create or edit a Procedimento</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.procedimento.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.procedimento.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.procedimento.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.procedimento.descricao"
+                    required/>
+            <div ng-show="editForm.descricao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descricao.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.procedimento.duration" for="field_duration">Duration</label>
+            <input type="number" class="form-control" name="duration" id="field_duration"
+                    ng-model="vm.procedimento.duration"
+                    required/>
+            <div ng-show="editForm.duration.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.duration.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.duration.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.procedimento.cid" for="field_cid">Cid</label>
+            <input type="text" class="form-control" name="cid" id="field_cid"
+                    ng-model="vm.procedimento.cid"
+                    required/>
+            <div ng-show="editForm.cid.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cid.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

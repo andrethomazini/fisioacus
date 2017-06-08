@@ -1,0 +1,10 @@
+{
+    "fisioacusApp": {
+        "Genero" : {
+            "null": "",
+            "MASCULINO": "MASCULINO",
+            "FEMININO": "FEMININO",
+            "OUTRO": "OUTRO"
+        }
+    }
+}

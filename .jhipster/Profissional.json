@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "profissional"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dtInicio",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dtTermino",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170608032922",
+    "entityTableName": "profissional",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

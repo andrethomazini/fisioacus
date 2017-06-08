@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="fisioacusApp.profissional.detail.title">Profissional</span> {{vm.profissional.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="fisioacusApp.profissional.dtInicio">Dt Inicio</span></dt>
+        <dd>
+            <span>{{vm.profissional.dtInicio | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.profissional.dtTermino">Dt Termino</span></dt>
+        <dd>
+            <span>{{vm.profissional.dtTermino | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.profissional.pessoa">Pessoa</span></dt>
+        <dd>
+            <a ui-sref="pessoa-my-suffix-detail({id:vm.profissional.pessoaId})">{{vm.profissional.pessoaNome}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="profissional-my-suffix-detail.edit({id:vm.profissional.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

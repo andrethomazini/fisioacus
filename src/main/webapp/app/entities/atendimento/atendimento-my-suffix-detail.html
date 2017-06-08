@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span data-translate="fisioacusApp.atendimento.detail.title">Atendimento</span> {{vm.atendimento.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="fisioacusApp.atendimento.medico">Medico</span></dt>
+        <dd>
+            <span>{{vm.atendimento.medico}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.numeroCartao">Numero Cartao</span></dt>
+        <dd>
+            <span>{{vm.atendimento.numeroCartao}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.desconto">Desconto</span></dt>
+        <dd>
+            <span>{{vm.atendimento.desconto}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.atendimento.valor}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.queixaPrincipal">Queixa Principal</span></dt>
+        <dd>
+            <span>{{vm.atendimento.queixaPrincipal}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.hipoteseDiagnostica">Hipotese Diagnostica</span></dt>
+        <dd>
+            <span>{{vm.atendimento.hipoteseDiagnostica}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.dtInicio">Dt Inicio</span></dt>
+        <dd>
+            <span>{{vm.atendimento.dtInicio | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.numeroAutenticador">Numero Autenticador</span></dt>
+        <dd>
+            <span>{{vm.atendimento.numeroAutenticador}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.dtTermino">Dt Termino</span></dt>
+        <dd>
+            <span>{{vm.atendimento.dtTermino | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.quantidadeSessoes">Quantidade Sessoes</span></dt>
+        <dd>
+            <span>{{vm.atendimento.quantidadeSessoes}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.convenio">Convenio</span></dt>
+        <dd>
+            <a ui-sref="convenio-my-suffix-detail({id:vm.atendimento.convenioId})">{{vm.atendimento.convenioDescricao}}</a>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.pessoa">Pessoa</span></dt>
+        <dd>
+            <a ui-sref="pessoa-my-suffix-detail({id:vm.atendimento.pessoaId})">{{vm.atendimento.pessoaNome}}</a>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.procedimento">Procedimento</span></dt>
+        <dd>
+            <a ui-sref="procedimento-my-suffix-detail({id:vm.atendimento.procedimentoId})">{{vm.atendimento.procedimentoDescricao}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="atendimento-my-suffix-detail.edit({id:vm.atendimento.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

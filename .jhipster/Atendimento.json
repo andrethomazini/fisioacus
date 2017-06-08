@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "convenio",
+            "otherEntityName": "convenio",
+            "otherEntityField": "descricao",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "atendimento"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "atendimento"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "procedimento",
+            "otherEntityName": "procedimento",
+            "otherEntityField": "descricao",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "atendimento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sessao",
+            "otherEntityName": "sessao",
+            "otherEntityRelationshipName": "atendimento"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "medico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroCartao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "desconto",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "queixaPrincipal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hipoteseDiagnostica",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dtInicio",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "numeroAutenticador",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dtTermino",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "quantidadeSessoes",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170608032926",
+    "entityTableName": "atendimento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

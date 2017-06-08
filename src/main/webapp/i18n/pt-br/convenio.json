@@ -1,0 +1,23 @@
+{
+    "fisioacusApp": {
+        "convenio" : {
+            "home": {
+                "title": "Convenios",
+                "createLabel": "Criar novo Convenio",
+                "createOrEditLabel": "Criar ou editar Convenio"
+            },
+            "created": "Um novo Convenio é criado com o identificador {{ param }}",
+            "updated": "Um Convenio é atualizado com o identificador {{ param }}",
+            "deleted": "Um Convenio é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Convenio {{ id }}?"
+            },
+            "detail": {
+                "title": "Convenio"
+            },
+            "descricao": "Descricao",
+            "contato": "Contato",
+            "telefone": "Telefone"
+        }
+    }
+}

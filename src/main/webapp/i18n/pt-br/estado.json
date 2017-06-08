@@ -1,0 +1,13 @@
+{
+    "fisioacusApp": {
+        "Estado" : {
+            "null": "",
+            "SP": "SP",
+            "MS": "MS",
+            "PR": "PR",
+            "RJ": "RJ",
+            "MG": "MG",
+            "SC": "SC"
+        }
+    }
+}

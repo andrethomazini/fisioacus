@@ -1,0 +1,34 @@
+{
+    "fisioacusApp": {
+        "atendimento" : {
+            "home": {
+                "title": "Atendimentos",
+                "createLabel": "Criar novo Atendimento",
+                "createOrEditLabel": "Criar ou editar Atendimento"
+            },
+            "created": "Um novo Atendimento é criado com o identificador {{ param }}",
+            "updated": "Um Atendimento é atualizado com o identificador {{ param }}",
+            "deleted": "Um Atendimento é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Atendimento {{ id }}?"
+            },
+            "detail": {
+                "title": "Atendimento"
+            },
+            "medico": "Medico",
+            "numeroCartao": "Numero Cartao",
+            "desconto": "Desconto",
+            "valor": "Valor",
+            "queixaPrincipal": "Queixa Principal",
+            "hipoteseDiagnostica": "Hipotese Diagnostica",
+            "dtInicio": "Dt Inicio",
+            "numeroAutenticador": "Numero Autenticador",
+            "dtTermino": "Dt Termino",
+            "quantidadeSessoes": "Quantidade Sessoes",
+            "convenio": "Convenio",
+            "pessoa": "Pessoa",
+            "procedimento": "Procedimento",
+            "sessao": "Sessao"
+        }
+    }
+}

@@ -1,0 +1,55 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCidadeLabel" data-translate="fisioacusApp.cidade.home.createOrEditLabel">Create or edit a Cidade</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cidade.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cidade.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.cidade.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.cidade.descricao"
+                    required/>
+            <div ng-show="editForm.descricao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descricao.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.cidade.estado" for="field_estado">Estado</label>
+            <select class="form-control" name="estado" ng-model="vm.cidade.estado" id="field_estado" required>
+                <option value="SP" data-translate="fisioacusApp.Estado.SP">SP</option>
+                <option value="MS" data-translate="fisioacusApp.Estado.MS">MS</option>
+                <option value="PR" data-translate="fisioacusApp.Estado.PR">PR</option>
+                <option value="RJ" data-translate="fisioacusApp.Estado.RJ">RJ</option>
+                <option value="MG" data-translate="fisioacusApp.Estado.MG">MG</option>
+                <option value="SC" data-translate="fisioacusApp.Estado.SC">SC</option>
+            </select>
+            <div ng-show="editForm.estado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.estado.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
