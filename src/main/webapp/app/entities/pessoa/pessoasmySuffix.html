@@ -22,14 +22,6 @@
                     <th jh-sort-by="nome"><span data-translate="fisioacusApp.pessoa.nome">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="telefone"><span data-translate="fisioacusApp.pessoa.telefone">Telefone</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="celular"><span data-translate="fisioacusApp.pessoa.celular">Celular</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="endereco"><span data-translate="fisioacusApp.pessoa.endereco">Endereco</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="numero"><span data-translate="fisioacusApp.pessoa.numero">Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="complemento"><span data-translate="fisioacusApp.pessoa.complemento">Complemento</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cep"><span data-translate="fisioacusApp.pessoa.cep">Cep</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contato"><span data-translate="fisioacusApp.pessoa.contato">Contato</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dtNascimento"><span data-translate="fisioacusApp.pessoa.dtNascimento">Dt Nascimento</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="genero"><span data-translate="fisioacusApp.pessoa.genero">Genero</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="email"><span data-translate="fisioacusApp.pessoa.email">Email</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="cidadeDescricao"><span data-translate="fisioacusApp.pessoa.cidade">Cidade</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -38,16 +30,6 @@
                 <tr ng-repeat="pessoa in vm.pessoas track by pessoa.id">
                     <td><a ui-sref="pessoa-my-suffix-detail({id:pessoa.id})">{{pessoa.id}}</a></td>
                     <td>{{pessoa.nome}}</td>
-                    <td>{{pessoa.telefone}}</td>
-                    <td>{{pessoa.celular}}</td>
-                    <td>{{pessoa.endereco}}</td>
-                    <td>{{pessoa.numero}}</td>
-                    <td>{{pessoa.complemento}}</td>
-                    <td>{{pessoa.cep}}</td>
-                    <td>{{pessoa.contato}}</td>
-                        <td>{{pessoa.dtNascimento | date:'mediumDate'}}</td>
-                    <td data-translate="{{'fisioacusApp.Genero.' + pessoa.genero}}">{{pessoa.genero}}</td>
-                    <td>{{pessoa.email}}</td>
                     <td>
                         <a ui-sref="cidade-my-suffix-detail({id:pessoa.cidadeId})">{{pessoa.cidadeDescricao}}</a>
                     </td>

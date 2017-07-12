@@ -2,20 +2,20 @@
     "fisioacusApp": {
         "sessao" : {
             "home": {
-                "title": "Sessaos",
-                "createLabel": "Criar novo Sessao",
-                "createOrEditLabel": "Criar ou editar Sessao"
+                "title": "Sessões",
+                "createLabel": "Criar novo Sessão",
+                "createOrEditLabel": "Criar ou editar Sessão"
             },
-            "created": "Um novo Sessao é criado com o identificador {{ param }}",
-            "updated": "Um Sessao é atualizado com o identificador {{ param }}",
-            "deleted": "Um Sessao é deletado com o identificador {{ param }}",
+            "created": "Um novo Sessão é criado com o identificador {{ param }}",
+            "updated": "Um Sessão é atualizado com o identificador {{ param }}",
+            "deleted": "Um Sessão é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Sessao {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Sessão {{ id }}?"
             },
             "detail": {
-                "title": "Sessao"
+                "title": "Sessão"
             },
-            "descricao": "Descricao",
+            "descricao": "Descrição",
             "dtInicio": "Dt Inicio",
             "profissional": "Profissional",
             "atendimento": "Atendimento"

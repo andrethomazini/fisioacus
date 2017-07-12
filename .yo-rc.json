@@ -35,6 +35,7 @@
     "nativeLanguage": "pt-br",
     "languages": [
       "pt-br"
-    ]
+    ],
+    "herokuAppName": "fisioacus"
   }
 }

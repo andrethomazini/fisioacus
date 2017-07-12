@@ -2,7 +2,7 @@
     "fisioacusApp": {
         "profissional" : {
             "home": {
-                "title": "Profissionals",
+                "title": "Profissionais",
                 "createLabel": "Criar novo Profissional",
                 "createOrEditLabel": "Criar ou editar Profissional"
             },
