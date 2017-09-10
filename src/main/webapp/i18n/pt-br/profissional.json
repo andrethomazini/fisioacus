@@ -6,17 +6,17 @@
                 "createLabel": "Criar novo Profissional",
                 "createOrEditLabel": "Criar ou editar Profissional"
             },
-            "created": "Um novo Profissional é criado com o identificador {{ param }}",
-            "updated": "Um Profissional é atualizado com o identificador {{ param }}",
-            "deleted": "Um Profissional é deletado com o identificador {{ param }}",
+            "created": "Profissional de identificador {{ param }} criado com sucesso",
+            "updated": "Profissional de identificador {{ param }} atualizado com sucesso",
+            "deleted": "Profissional de identificador {{ param }} removido com sucesso",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Profissional {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Profissional {{ pessoaNome }}?"
             },
             "detail": {
                 "title": "Profissional"
             },
-            "dtInicio": "Dt Inicio",
-            "dtTermino": "Dt Termino",
+            "dtInicio": "Dt Início",
+            "dtTermino": "Dt Término",
             "pessoa": "Pessoa"
         }
     }

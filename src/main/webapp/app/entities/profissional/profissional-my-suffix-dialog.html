@@ -42,11 +42,18 @@
 
         <div class="form-group">
             <label data-translate="fisioacusApp.profissional.pessoa" for="field_pessoa">Pessoa</label>
-            <select class="form-control" id="field_pessoa" name="pessoa" ng-model="vm.profissional.pessoaId" ng-options="pessoa.id as pessoa.nome for pessoa in vm.pessoas | orderBy:'id'">
+            <select class="form-control" id="field_pessoa" name="pessoa" ng-model="vm.profissional.pessoaId" ng-options="pessoa.id as pessoa.nome for pessoa in vm.pessoas | orderBy:'id'" required>
                 <option value=""></option>
             </select>
+            <div ng-show="editForm.pessoa.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.pessoa.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
         </div>
     </div>
+
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>

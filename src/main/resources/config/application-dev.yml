@@ -122,6 +122,10 @@ jhipster:
             host: localhost
             port: 5000
             queue-size: 512
+    elasticsearch:
+      properties:
+          http:
+              enabled: true
 
 # ===================================================================
 # Application specific properties

@@ -30,6 +30,8 @@
                 <tr ng-repeat="pessoa in vm.pessoas track by pessoa.id">
                     <td><a ui-sref="pessoa-my-suffix-detail({id:pessoa.id})">{{pessoa.id}}</a></td>
                     <td>{{pessoa.nome}}</td>
+                    <td>{{pessoa.telefone}}</td>
+                    <td>{{pessoa.celular}}</td>
                     <td>
                         <a ui-sref="cidade-my-suffix-detail({id:pessoa.cidadeId})">{{pessoa.cidadeDescricao}}</a>
                     </td>
