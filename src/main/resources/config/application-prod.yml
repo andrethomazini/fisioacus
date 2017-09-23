@@ -21,9 +21,14 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
+        #url: jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10195869?useUnicode=true&characterEncoding=utf8&useSSL=false
+        #username: sql10195869
+        #password: Sd6bK15AeR
+
         url: jdbc:mysql://localhost:3306/fisioacus?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password:
+        username: fisioacus
+        password: 1234
+
         hikari:
             data-source-properties:
                 cachePrepStmts: true
