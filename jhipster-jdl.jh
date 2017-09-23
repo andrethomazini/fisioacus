@@ -1,0 +1,97 @@
+
+
+entity State {
+	id Long required
+    name String required
+}
+
+entity City {
+	id Long required
+    name String required
+}
+
+entity Address {
+	id Long required
+	street String required
+    number String required
+    complement String
+    cep String required minlength(7)
+}
+
+entity Person {
+	id Long required
+    name String required
+    telephone String
+    cellPhone String required
+    contactName String
+    dtBirth ZonedDateTime required
+    gender Gender
+    email String
+}
+
+enum Gender {
+	MALE,
+    FEMALE,
+    OTHER
+}
+
+entity Professional {
+	id Long required
+    dtStart ZonedDateTime required
+    dtEnd ZonedDateTime required
+}
+
+entity Procedure {
+	id Long required
+    description String required
+    duration Integer required
+    cid String required
+}
+
+entity SessionTreatment {
+	id Long required
+    dtStart ZonedDateTime required
+}
+
+entity MedicalAgreement {
+	id Long required
+    name String required
+    contact String
+    telNumber String required
+}
+
+entity ServiceTreatment {
+	id Long required
+    doctorName String required
+    cardNumber String required
+    discount Boolean
+    value Float
+    complains String
+    diagnosticHypotesis String
+    dtStart ZonedDateTime
+    autValue String
+    dtFinish ZonedDateTime
+    sessionAmount Integer
+}
+
+relationship OneToOne {
+	ServiceTreatment{medicalAgreement} to MedicalAgreement,
+    ServiceTreatment{person} to Person,
+    Person{address} to Address,
+    Professional{person} to Person,
+    SessionTreatment{professional} to Professional,
+    SessionTreatment{procedure} to Procedure,
+    Address{city} to City,
+    City{state} to State
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	ServiceTreatment{procedure} to Procedure,
+    ServiceTreatment{sessionTreatment} to SessionTreatment
+}
+
+paginate Person, SessionTreatment with pagination
+dto * with mapstruct
+service all with serviceImpl
+angularSuffix * with mySuffix
