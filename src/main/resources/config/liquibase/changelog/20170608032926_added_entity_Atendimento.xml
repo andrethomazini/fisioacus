@@ -27,7 +27,7 @@
             </column>
 
             <column name="numero_cartao" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="desconto" type="bit">
@@ -59,6 +59,10 @@
             </column>
 
             <column name="quantidade_sessoes" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="observacao" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="convenio_id" type="bigint">

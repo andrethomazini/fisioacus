@@ -18,7 +18,6 @@ public class AtendimentoDTO implements Serializable {
     @NotNull
     private String medico;
 
-    @NotNull
     private String numeroCartao;
 
     private Boolean desconto;
@@ -36,6 +35,8 @@ public class AtendimentoDTO implements Serializable {
     private LocalDate dtTermino;
 
     private Integer quantidadeSessoes;
+
+    private String observacao;
 
     private Long convenioId;
 
@@ -137,6 +138,14 @@ public class AtendimentoDTO implements Serializable {
         this.quantidadeSessoes = quantidadeSessoes;
     }
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     public Long getConvenioId() {
         return convenioId;
     }
@@ -220,6 +229,7 @@ public class AtendimentoDTO implements Serializable {
             ", numeroAutenticador='" + getNumeroAutenticador() + "'" +
             ", dtTermino='" + getDtTermino() + "'" +
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
+            ", observacao='" + getObservacao() + "'" +
             "}";
     }
 }

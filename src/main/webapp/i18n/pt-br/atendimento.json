@@ -10,25 +10,26 @@
             "updated": "Um Atendimento é atualizado com o identificador {{ param }}",
             "deleted": "Um Atendimento é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir o Atendimento {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Atendimento {{ id }}?"
             },
             "detail": {
                 "title": "Atendimento"
             },
-            "medico": "Médico",
-            "numeroCartao": "Número Cartão",
+            "medico": "Medico",
+            "numeroCartao": "Numero Cartao",
             "desconto": "Desconto",
             "valor": "Valor",
             "queixaPrincipal": "Queixa Principal",
-            "hipoteseDiagnostica": "Hipótese Diagnóstica",
-            "dtInicio": "Dt. Início",
-            "numeroAutenticador": "Número Autenticador",
-            "dtTermino": "Dt. Término",
-            "quantidadeSessoes": "Quantidade Sessões",
-            "convenio": "Convênio",
-            "pessoa": "Cliente",
+            "hipoteseDiagnostica": "Hipotese Diagnostica",
+            "dtInicio": "Dt Inicio",
+            "numeroAutenticador": "Numero Autenticador",
+            "dtTermino": "Dt Termino",
+            "quantidadeSessoes": "Quantidade Sessoes",
+            "observacao": "Observacao",
+            "convenio": "Convenio",
+            "pessoa": "Pessoa",
             "procedimento": "Procedimento",
-            "sessao": "Sessão"
+            "sessao": "Sessao"
         }
     }
 }

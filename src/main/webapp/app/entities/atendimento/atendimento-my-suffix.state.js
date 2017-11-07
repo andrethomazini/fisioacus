@@ -134,6 +134,7 @@
                                 numeroAutenticador: null,
                                 dtTermino: null,
                                 quantidadeSessoes: null,
+                                observacao: null,
                                 id: null
                             };
                         }

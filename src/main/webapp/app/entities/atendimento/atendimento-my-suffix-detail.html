@@ -4,21 +4,25 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="fisioacusApp.atendimento.medico">Medico</span></dt>
+        <dt><span data-translate="fisioacusApp.atendimento.pessoa">Pessoa</span></dt>
         <dd>
-            <span>{{vm.atendimento.medico}}</span>
+            <a ui-sref="pessoa-my-suffix-detail({id:vm.atendimento.pessoaId})">{{vm.atendimento.pessoaNome}}</a>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.convenio">Convenio</span></dt>
+        <dd>
+            <a ui-sref="convenio-my-suffix-detail({id:vm.atendimento.convenioId})">{{vm.atendimento.convenioDescricao}}</a>
         </dd>
         <dt><span data-translate="fisioacusApp.atendimento.numeroCartao">Numero Cartao</span></dt>
         <dd>
             <span>{{vm.atendimento.numeroCartao}}</span>
         </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.desconto">Desconto</span></dt>
+        <dt><span data-translate="fisioacusApp.atendimento.numeroAutenticador">Numero Autenticador</span></dt>
         <dd>
-            <span>{{vm.atendimento.desconto}}</span>
+            <span>{{vm.atendimento.numeroAutenticador}}</span>
         </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.valor">Valor</span></dt>
+        <dt><span data-translate="fisioacusApp.atendimento.medico">Medico</span></dt>
         <dd>
-            <span>{{vm.atendimento.valor}}</span>
+            <span>{{vm.atendimento.medico}}</span>
         </dd>
         <dt><span data-translate="fisioacusApp.atendimento.queixaPrincipal">Queixa Principal</span></dt>
         <dd>
@@ -28,13 +32,17 @@
         <dd>
             <span>{{vm.atendimento.hipoteseDiagnostica}}</span>
         </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.desconto">Desconto</span></dt>
+        <dd>
+            <span>{{vm.atendimento.desconto}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.atendimento.valor}}</span>
+        </dd>
         <dt><span data-translate="fisioacusApp.atendimento.dtInicio">Dt Inicio</span></dt>
         <dd>
             <span>{{vm.atendimento.dtInicio | date:'mediumDate'}}</span>
-        </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.numeroAutenticador">Numero Autenticador</span></dt>
-        <dd>
-            <span>{{vm.atendimento.numeroAutenticador}}</span>
         </dd>
         <dt><span data-translate="fisioacusApp.atendimento.dtTermino">Dt Termino</span></dt>
         <dd>
@@ -44,13 +52,9 @@
         <dd>
             <span>{{vm.atendimento.quantidadeSessoes}}</span>
         </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.convenio">Convenio</span></dt>
+        <dt><span data-translate="fisioacusApp.atendimento.observacao">Observacao</span></dt>
         <dd>
-            <a ui-sref="convenio-my-suffix-detail({id:vm.atendimento.convenioId})">{{vm.atendimento.convenioDescricao}}</a>
-        </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.pessoa">Pessoa</span></dt>
-        <dd>
-            <a ui-sref="pessoa-my-suffix-detail({id:vm.atendimento.pessoaId})">{{vm.atendimento.pessoaNome}}</a>
+            <span>{{vm.atendimento.observacao}}</span>
         </dd>
         <dt><span data-translate="fisioacusApp.atendimento.procedimento">Procedimento</span></dt>
         <dd>

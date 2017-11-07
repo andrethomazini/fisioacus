@@ -30,8 +30,7 @@ public class Atendimento implements Serializable {
     @Column(name = "medico", nullable = false)
     private String medico;
 
-    @NotNull
-    @Column(name = "numero_cartao", nullable = false)
+    @Column(name = "numero_cartao")
     private String numeroCartao;
 
     @Column(name = "desconto")
@@ -57,6 +56,9 @@ public class Atendimento implements Serializable {
 
     @Column(name = "quantidade_sessoes")
     private Integer quantidadeSessoes;
+
+    @Column(name = "observacao")
+    private String observacao;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -213,6 +215,19 @@ public class Atendimento implements Serializable {
         this.quantidadeSessoes = quantidadeSessoes;
     }
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public Atendimento observacao(String observacao) {
+        this.observacao = observacao;
+        return this;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     public Convenio getConvenio() {
         return convenio;
     }
@@ -311,6 +326,7 @@ public class Atendimento implements Serializable {
             ", numeroAutenticador='" + getNumeroAutenticador() + "'" +
             ", dtTermino='" + getDtTermino() + "'" +
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
+            ", observacao='" + getObservacao() + "'" +
             "}";
     }
 }

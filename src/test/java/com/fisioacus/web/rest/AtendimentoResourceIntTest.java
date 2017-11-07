@@ -72,6 +72,9 @@ public class AtendimentoResourceIntTest {
     private static final Integer DEFAULT_QUANTIDADE_SESSOES = 1;
     private static final Integer UPDATED_QUANTIDADE_SESSOES = 2;
 
+    private static final String DEFAULT_OBSERVACAO = "AAAAAAAAAA";
+    private static final String UPDATED_OBSERVACAO = "BBBBBBBBBB";
+
     @Autowired
     private AtendimentoRepository atendimentoRepository;
 
@@ -124,7 +127,8 @@ public class AtendimentoResourceIntTest {
             .dtInicio(DEFAULT_DT_INICIO)
             .numeroAutenticador(DEFAULT_NUMERO_AUTENTICADOR)
             .dtTermino(DEFAULT_DT_TERMINO)
-            .quantidadeSessoes(DEFAULT_QUANTIDADE_SESSOES);
+            .quantidadeSessoes(DEFAULT_QUANTIDADE_SESSOES)
+            .observacao(DEFAULT_OBSERVACAO);
         return atendimento;
     }
 
@@ -159,6 +163,7 @@ public class AtendimentoResourceIntTest {
         assertThat(testAtendimento.getNumeroAutenticador()).isEqualTo(DEFAULT_NUMERO_AUTENTICADOR);
         assertThat(testAtendimento.getDtTermino()).isEqualTo(DEFAULT_DT_TERMINO);
         assertThat(testAtendimento.getQuantidadeSessoes()).isEqualTo(DEFAULT_QUANTIDADE_SESSOES);
+        assertThat(testAtendimento.getObservacao()).isEqualTo(DEFAULT_OBSERVACAO);
     }
 
     @Test
@@ -202,25 +207,6 @@ public class AtendimentoResourceIntTest {
 
     @Test
     @Transactional
-    public void checkNumeroCartaoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = atendimentoRepository.findAll().size();
-        // set the field null
-        atendimento.setNumeroCartao(null);
-
-        // Create the Atendimento, which fails.
-        AtendimentoDTO atendimentoDTO = atendimentoMapper.toDto(atendimento);
-
-        restAtendimentoMockMvc.perform(post("/api/atendimentos")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(atendimentoDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Atendimento> atendimentoList = atendimentoRepository.findAll();
-        assertThat(atendimentoList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllAtendimentos() throws Exception {
         // Initialize the database
         atendimentoRepository.saveAndFlush(atendimento);
@@ -239,7 +225,8 @@ public class AtendimentoResourceIntTest {
             .andExpect(jsonPath("$.[*].dtInicio").value(hasItem(DEFAULT_DT_INICIO.toString())))
             .andExpect(jsonPath("$.[*].numeroAutenticador").value(hasItem(DEFAULT_NUMERO_AUTENTICADOR.toString())))
             .andExpect(jsonPath("$.[*].dtTermino").value(hasItem(DEFAULT_DT_TERMINO.toString())))
-            .andExpect(jsonPath("$.[*].quantidadeSessoes").value(hasItem(DEFAULT_QUANTIDADE_SESSOES)));
+            .andExpect(jsonPath("$.[*].quantidadeSessoes").value(hasItem(DEFAULT_QUANTIDADE_SESSOES)))
+            .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO.toString())));
     }
 
     @Test
@@ -262,7 +249,8 @@ public class AtendimentoResourceIntTest {
             .andExpect(jsonPath("$.dtInicio").value(DEFAULT_DT_INICIO.toString()))
             .andExpect(jsonPath("$.numeroAutenticador").value(DEFAULT_NUMERO_AUTENTICADOR.toString()))
             .andExpect(jsonPath("$.dtTermino").value(DEFAULT_DT_TERMINO.toString()))
-            .andExpect(jsonPath("$.quantidadeSessoes").value(DEFAULT_QUANTIDADE_SESSOES));
+            .andExpect(jsonPath("$.quantidadeSessoes").value(DEFAULT_QUANTIDADE_SESSOES))
+            .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO.toString()));
     }
 
     @Test
@@ -292,7 +280,8 @@ public class AtendimentoResourceIntTest {
             .dtInicio(UPDATED_DT_INICIO)
             .numeroAutenticador(UPDATED_NUMERO_AUTENTICADOR)
             .dtTermino(UPDATED_DT_TERMINO)
-            .quantidadeSessoes(UPDATED_QUANTIDADE_SESSOES);
+            .quantidadeSessoes(UPDATED_QUANTIDADE_SESSOES)
+            .observacao(UPDATED_OBSERVACAO);
         AtendimentoDTO atendimentoDTO = atendimentoMapper.toDto(updatedAtendimento);
 
         restAtendimentoMockMvc.perform(put("/api/atendimentos")
@@ -314,6 +303,7 @@ public class AtendimentoResourceIntTest {
         assertThat(testAtendimento.getNumeroAutenticador()).isEqualTo(UPDATED_NUMERO_AUTENTICADOR);
         assertThat(testAtendimento.getDtTermino()).isEqualTo(UPDATED_DT_TERMINO);
         assertThat(testAtendimento.getQuantidadeSessoes()).isEqualTo(UPDATED_QUANTIDADE_SESSOES);
+        assertThat(testAtendimento.getObservacao()).isEqualTo(UPDATED_OBSERVACAO);
     }
 
     @Test

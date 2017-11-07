@@ -67,7 +67,7 @@ class AtendimentoGatlingTest extends Simulation {
             .exec(http("Create new atendimento")
             .post("/api/atendimentos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "medico":"SAMPLE_TEXT", "numeroCartao":"SAMPLE_TEXT", "desconto":null, "valor":null, "queixaPrincipal":"SAMPLE_TEXT", "hipoteseDiagnostica":"SAMPLE_TEXT", "dtInicio":"2020-01-01T00:00:00.000Z", "numeroAutenticador":"SAMPLE_TEXT", "dtTermino":"2020-01-01T00:00:00.000Z", "quantidadeSessoes":"0"}""")).asJSON
+            .body(StringBody("""{"id":null, "medico":"SAMPLE_TEXT", "numeroCartao":"SAMPLE_TEXT", "desconto":null, "valor":null, "queixaPrincipal":"SAMPLE_TEXT", "hipoteseDiagnostica":"SAMPLE_TEXT", "dtInicio":"2020-01-01T00:00:00.000Z", "numeroAutenticador":"SAMPLE_TEXT", "dtTermino":"2020-01-01T00:00:00.000Z", "quantidadeSessoes":"0", "observacao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_atendimento_url"))).exitHereIfFailed
             .pause(10)

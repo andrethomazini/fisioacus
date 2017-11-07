@@ -42,10 +42,7 @@
         },
         {
             "fieldName": "numeroCartao",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldType": "String"
         },
         {
             "fieldName": "desconto",
@@ -78,12 +75,16 @@
         {
             "fieldName": "quantidadeSessoes",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "observacao",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170608032926",
-    "entityTableName": "atendimento",
     "dto": "mapstruct",
-    "pagination": "pagination",
     "service": "serviceImpl",
+    "entityTableName": "atendimento",
+    "pagination": "pagination",
     "angularJSSuffix": "mySuffix"
 }
