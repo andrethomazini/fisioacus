@@ -33,6 +33,9 @@ public class Convenio implements Serializable {
     @Column(name = "telefone", nullable = false)
     private String telefone;
 
+    @Column(name = "observacao")
+    private String observacao;
+
     public Long getId() {
         return id;
     }
@@ -80,6 +83,19 @@ public class Convenio implements Serializable {
         this.telefone = telefone;
     }
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public Convenio observacao(String observacao) {
+        this.observacao = observacao;
+        return this;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -107,6 +123,7 @@ public class Convenio implements Serializable {
             ", descricao='" + getDescricao() + "'" +
             ", contato='" + getContato() + "'" +
             ", telefone='" + getTelefone() + "'" +
+            ", observacao='" + getObservacao() + "'" +
             "}";
     }
 }

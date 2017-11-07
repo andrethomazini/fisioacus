@@ -15,9 +15,9 @@
             "detail": {
                 "title": "Profissional"
             },
-            "dtInicio": "Dt Início",
-            "dtTermino": "Dt Término",
-            "pessoa": "Pessoa"
+            "dtInicio": "Dt. Início",
+            "dtTermino": "Dt. Término",
+            "pessoa": "Cliente"
         }
     }
 }

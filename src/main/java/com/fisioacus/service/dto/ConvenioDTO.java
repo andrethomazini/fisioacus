@@ -20,6 +20,8 @@ public class ConvenioDTO implements Serializable {
     @NotNull
     private String telefone;
 
+    private String observacao;
+
     public Long getId() {
         return id;
     }
@@ -52,6 +54,14 @@ public class ConvenioDTO implements Serializable {
         this.telefone = telefone;
     }
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -80,6 +90,7 @@ public class ConvenioDTO implements Serializable {
             ", descricao='" + getDescricao() + "'" +
             ", contato='" + getContato() + "'" +
             ", telefone='" + getTelefone() + "'" +
+            ", observacao='" + getObservacao() + "'" +
             "}";
     }
 }

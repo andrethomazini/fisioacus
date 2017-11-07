@@ -8,7 +8,7 @@
             "entities": {
                 "main": "Cadastros",
                 "cidadeMySuffix": "Cidade",
-                "pessoaMySuffix": "Pessoa",
+                "pessoaMySuffix": "Cliente",
                 "profissionalMySuffix": "Profissional",
                 "procedimentoMySuffix": "Procedimento",
                 "sessaoMySuffix": "Sessão",

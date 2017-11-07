@@ -2,22 +2,23 @@
     "fisioacusApp": {
         "convenio" : {
             "home": {
-                "title": "Convenios",
-                "createLabel": "Criar novo Convenio",
-                "createOrEditLabel": "Criar ou editar Convenio"
+                "title": "Convênios",
+                "createLabel": "Criar novo Convênio",
+                "createOrEditLabel": "Criar ou editar Convênio"
             },
-            "created": "Um novo Convenio é criado com o identificador {{ param }}",
-            "updated": "Um Convenio é atualizado com o identificador {{ param }}",
-            "deleted": "Um Convenio é deletado com o identificador {{ param }}",
+            "created": "Um novo Convênio é criado com o identificador {{ param }}",
+            "updated": "Um Convênio é atualizado com o identificador {{ param }}",
+            "deleted": "Um Convênio é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Convenio {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Convênio {{ id }}?"
             },
             "detail": {
-                "title": "Convenio"
+                "title": "Convênio"
             },
-            "descricao": "Descricao",
+            "descricao": "Descrição",
             "contato": "Contato",
-            "telefone": "Telefone"
+            "telefone": "Telefone",
+            "observacao": "Observação"
         }
     }
 }

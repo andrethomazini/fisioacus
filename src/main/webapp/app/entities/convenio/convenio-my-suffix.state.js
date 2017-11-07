@@ -127,6 +127,7 @@
                                 descricao: null,
                                 contato: null,
                                 telefone: null,
+                                observacao: null,
                                 id: null
                             };
                         }

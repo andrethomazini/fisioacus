@@ -21,12 +21,12 @@
             "valor": "Valor",
             "queixaPrincipal": "Queixa Principal",
             "hipoteseDiagnostica": "Hipótese Diagnóstica",
-            "dtInicio": "Dt Início",
+            "dtInicio": "Dt. Início",
             "numeroAutenticador": "Número Autenticador",
-            "dtTermino": "Dt Término",
+            "dtTermino": "Dt. Término",
             "quantidadeSessoes": "Quantidade Sessões",
             "convenio": "Convênio",
-            "pessoa": "Pessoa",
+            "pessoa": "Cliente",
             "procedimento": "Procedimento",
             "sessao": "Sessão"
         }

@@ -25,23 +25,27 @@
                 </p>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="fisioacusApp.convenio.contato" for="field_contato">Contato</label>
-            <input type="text" class="form-control" name="contato" id="field_contato"
-                    ng-model="vm.convenio.contato"
-                    />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="control-label" data-translate="fisioacusApp.convenio.contato" for="field_contato">Contato</label>
+                <input type="text" class="form-control" name="contato" id="field_contato" ng-model="vm.convenio.contato"/>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" data-translate="fisioacusApp.convenio.telefone" for="field_telefone">Telefone</label>
+                <input type="text" class="form-control" name="telefone" id="field_telefone"
+                       ng-model="vm.convenio.telefone" required/>
+                <div ng-show="editForm.telefone.$invalid">
+                    <p class="help-block"
+                       ng-show="editForm.telefone.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="fisioacusApp.convenio.telefone" for="field_telefone">Telefone</label>
-            <input type="text" class="form-control" name="telefone" id="field_telefone"
-                    ng-model="vm.convenio.telefone"
-                    required/>
-            <div ng-show="editForm.telefone.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.telefone.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
+            <label class="control-label" data-translate="fisioacusApp.convenio.observacao" for="field_observacao">Observacao</label>
+            <textarea class="form-control" name="observacao" id="field_observacao" ng-model="vm.convenio.observacao" rows="4"/>
         </div>
 
     </div>

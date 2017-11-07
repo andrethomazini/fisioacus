@@ -67,7 +67,7 @@ class ConvenioGatlingTest extends Simulation {
             .exec(http("Create new convenio")
             .post("/api/convenios")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "contato":"SAMPLE_TEXT", "telefone":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "contato":"SAMPLE_TEXT", "telefone":"SAMPLE_TEXT", "observacao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_convenio_url"))).exitHereIfFailed
             .pause(10)

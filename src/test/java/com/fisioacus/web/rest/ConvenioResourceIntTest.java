@@ -49,6 +49,9 @@ public class ConvenioResourceIntTest {
     private static final String DEFAULT_TELEFONE = "AAAAAAAAAA";
     private static final String UPDATED_TELEFONE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_OBSERVACAO = "AAAAAAAAAA";
+    private static final String UPDATED_OBSERVACAO = "BBBBBBBBBB";
+
     @Autowired
     private ConvenioRepository convenioRepository;
 
@@ -94,7 +97,8 @@ public class ConvenioResourceIntTest {
         Convenio convenio = new Convenio()
             .descricao(DEFAULT_DESCRICAO)
             .contato(DEFAULT_CONTATO)
-            .telefone(DEFAULT_TELEFONE);
+            .telefone(DEFAULT_TELEFONE)
+            .observacao(DEFAULT_OBSERVACAO);
         return convenio;
     }
 
@@ -122,6 +126,7 @@ public class ConvenioResourceIntTest {
         assertThat(testConvenio.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
         assertThat(testConvenio.getContato()).isEqualTo(DEFAULT_CONTATO);
         assertThat(testConvenio.getTelefone()).isEqualTo(DEFAULT_TELEFONE);
+        assertThat(testConvenio.getObservacao()).isEqualTo(DEFAULT_OBSERVACAO);
     }
 
     @Test
@@ -195,7 +200,8 @@ public class ConvenioResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(convenio.getId().intValue())))
             .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
             .andExpect(jsonPath("$.[*].contato").value(hasItem(DEFAULT_CONTATO.toString())))
-            .andExpect(jsonPath("$.[*].telefone").value(hasItem(DEFAULT_TELEFONE.toString())));
+            .andExpect(jsonPath("$.[*].telefone").value(hasItem(DEFAULT_TELEFONE.toString())))
+            .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO.toString())));
     }
 
     @Test
@@ -211,7 +217,8 @@ public class ConvenioResourceIntTest {
             .andExpect(jsonPath("$.id").value(convenio.getId().intValue()))
             .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
             .andExpect(jsonPath("$.contato").value(DEFAULT_CONTATO.toString()))
-            .andExpect(jsonPath("$.telefone").value(DEFAULT_TELEFONE.toString()));
+            .andExpect(jsonPath("$.telefone").value(DEFAULT_TELEFONE.toString()))
+            .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO.toString()));
     }
 
     @Test
@@ -234,7 +241,8 @@ public class ConvenioResourceIntTest {
         updatedConvenio
             .descricao(UPDATED_DESCRICAO)
             .contato(UPDATED_CONTATO)
-            .telefone(UPDATED_TELEFONE);
+            .telefone(UPDATED_TELEFONE)
+            .observacao(UPDATED_OBSERVACAO);
         ConvenioDTO convenioDTO = convenioMapper.toDto(updatedConvenio);
 
         restConvenioMockMvc.perform(put("/api/convenios")
@@ -249,6 +257,7 @@ public class ConvenioResourceIntTest {
         assertThat(testConvenio.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
         assertThat(testConvenio.getContato()).isEqualTo(UPDATED_CONTATO);
         assertThat(testConvenio.getTelefone()).isEqualTo(UPDATED_TELEFONE);
+        assertThat(testConvenio.getObservacao()).isEqualTo(UPDATED_OBSERVACAO);
     }
 
     @Test
