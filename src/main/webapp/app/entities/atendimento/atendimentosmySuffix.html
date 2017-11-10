@@ -17,73 +17,53 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="medico"><span data-translate="fisioacusApp.atendimento.medico">Medico</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="numeroCartao"><span data-translate="fisioacusApp.atendimento.numeroCartao">Numero Cartao</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="desconto"><span data-translate="fisioacusApp.atendimento.desconto">Desconto</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="valor"><span data-translate="fisioacusApp.atendimento.valor">Valor</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="queixaPrincipal"><span data-translate="fisioacusApp.atendimento.queixaPrincipal">Queixa Principal</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="hipoteseDiagnostica"><span data-translate="fisioacusApp.atendimento.hipoteseDiagnostica">Hipotese Diagnostica</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dtInicio"><span data-translate="fisioacusApp.atendimento.dtInicio">Dt Inicio</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="numeroAutenticador"><span data-translate="fisioacusApp.atendimento.numeroAutenticador">Numero Autenticador</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dtTermino"><span data-translate="fisioacusApp.atendimento.dtTermino">Dt Termino</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="quantidadeSessoes"><span data-translate="fisioacusApp.atendimento.quantidadeSessoes">Quantidade Sessoes</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="observacao"><span data-translate="fisioacusApp.atendimento.observacao">Observacao</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cid"><span data-translate="fisioacusApp.atendimento.cid">Cid</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="convenioDescricao"><span data-translate="fisioacusApp.atendimento.convenio">Convenio</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="pessoaNome"><span data-translate="fisioacusApp.atendimento.pessoa">Pessoa</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="procedimentoDescricao"><span data-translate="fisioacusApp.atendimento.procedimento">Procedimento</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="pessoaNome"><span data-translate="fisioacusApp.atendimento.pessoa">Pessoa</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="convenioDescricao"><span data-translate="fisioacusApp.atendimento.convenio">Convenio</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="numeroCartao"><span data-translate="fisioacusApp.atendimento.numeroCartao">Numero Cartao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="numeroAutenticador"><span data-translate="fisioacusApp.atendimento.numeroAutenticador">Numero Autenticador</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="medico"><span data-translate="fisioacusApp.atendimento.medico">Medico</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="sessoesRestantes"><span data-translate="fisioacusApp.atendimento.sessoesRestantes">Sessões Restantes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="atendimento in vm.atendimentos track by atendimento.id">
-                    <td><a ui-sref="atendimento-my-suffix-detail({id:atendimento.id})">{{atendimento.id}}</a></td>
-                    <td>{{atendimento.medico}}</td>
-                    <td>{{atendimento.numeroCartao}}</td>
-                    <td>{{atendimento.desconto}}</td>
-                    <td>{{atendimento.valor}}</td>
-                    <td>{{atendimento.queixaPrincipal}}</td>
-                    <td>{{atendimento.hipoteseDiagnostica}}</td>
-                        <td>{{atendimento.dtInicio | date:'mediumDate'}}</td>
-                    <td>{{atendimento.numeroAutenticador}}</td>
-                        <td>{{atendimento.dtTermino | date:'mediumDate'}}</td>
-                    <td>{{atendimento.quantidadeSessoes}}</td>
-                    <td>{{atendimento.observacao}}</td>
-                    <td>{{atendimento.cid}}</td>
-                    <td>
-                        <a ui-sref="convenio-my-suffix-detail({id:atendimento.convenioId})">{{atendimento.convenioDescricao}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="pessoa-my-suffix-detail({id:atendimento.pessoaId})">{{atendimento.pessoaNome}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="procedimento-my-suffix-detail({id:atendimento.procedimentoId})">{{atendimento.procedimentoDescricao}}</a>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="atendimento-my-suffix-detail({id:atendimento.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="atendimento-my-suffix.edit({id:atendimento.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="atendimento-my-suffix.delete({id:atendimento.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="atendimento in vm.atendimentos track by atendimento.id">
+                <td><a ui-sref="atendimento-my-suffix-detail({id:atendimento.id})">{{atendimento.id}}</a></td>
+                <td>
+                    <a ui-sref="pessoa-my-suffix-detail({id:atendimento.pessoaId})">{{atendimento.pessoaNome}}</a>
+                </td>
+                <td>
+                    <a ui-sref="convenio-my-suffix-detail({id:atendimento.convenioId})">{{atendimento.convenioDescricao}}</a>
+                </td>
+                <td>{{atendimento.numeroCartao}}</td>
+                <td>{{atendimento.numeroAutenticador}}</td>
+                <td>{{atendimento.medico}}</td>
+                <td>{{atendimento.sessoesRestantes}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="atendimento-my-suffix-detail({id:atendimento.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="atendimento-my-suffix.edit({id:atendimento.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="atendimento-my-suffix.delete({id:atendimento.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
