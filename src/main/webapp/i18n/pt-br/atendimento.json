@@ -15,22 +15,23 @@
             "detail": {
                 "title": "Atendimento"
             },
-            "numeroCartao": "Numero Cartao",
+            "numeroCartao": "Número Cartão",
             "desconto": "Desconto",
             "valor": "Valor",
             "queixaPrincipal": "Queixa Principal",
-            "hipoteseDiagnostica": "Hipotese Diagnostica",
-            "dtInicio": "Dt Inicio",
-            "numeroAutenticador": "Numero Autenticador",
-            "dtTermino": "Dt Termino",
-            "quantidadeSessoes": "Quantidade Sessoes",
-            "observacao": "Observacao",
+            "hipoteseDiagnostica": "Hipótese Diagnóstica",
+            "dtInicio": "Dt. Inicio",
+            "numeroAutenticador": "Número Autenticador",
+            "dtTermino": "Dt. Término",
+            "quantidadeSessoes": "Quantidade Sessões",
+            "observacao": "Observação",
             "cid": "Cid",
-            "convenio": "Convenio",
+            "convenio": "Convênio",
             "pessoa": "Pessoa",
             "procedimento": "Procedimento",
-            "medico": "Medico",
-            "sessao": "Sessao"
+            "medico": "Médico",
+            "sessao": "Sessão",
+            "sessoesRestantes": "Sessões Restantes"
         }
     }
 }

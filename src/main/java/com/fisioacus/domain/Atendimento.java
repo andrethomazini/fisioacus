@@ -307,6 +307,14 @@ public class Atendimento implements Serializable {
         this.sessaos = sessaos;
     }
 
+    @Transient
+    public Integer getSessoesRestantes() {
+        Integer saldo = quantidadeSessoes != null ? quantidadeSessoes : 0;
+        saldo -= getSessaos() != null ? getSessaos().size() : 0;
+
+        return saldo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
