@@ -26,5 +26,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="procedimento"/>
 
+        <addForeignKeyConstraint baseColumnNames="medico_id"
+                                 baseTableName="atendimento"
+                                 constraintName="fk_atendimento_medico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medico"/>
+
     </changeSet>
 </databaseChangeLog>

@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class AtendimentoResource {
      */
     @PostMapping("/atendimentos")
     @Timed
-    public ResponseEntity<AtendimentoDTO> createAtendimento(@Valid @RequestBody AtendimentoDTO atendimentoDTO) throws URISyntaxException {
+    public ResponseEntity<AtendimentoDTO> createAtendimento(@RequestBody AtendimentoDTO atendimentoDTO) throws URISyntaxException {
         log.debug("REST request to save Atendimento : {}", atendimentoDTO);
         if (atendimentoDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new atendimento cannot already have an ID")).body(null);
@@ -71,7 +70,7 @@ public class AtendimentoResource {
      */
     @PutMapping("/atendimentos")
     @Timed
-    public ResponseEntity<AtendimentoDTO> updateAtendimento(@Valid @RequestBody AtendimentoDTO atendimentoDTO) throws URISyntaxException {
+    public ResponseEntity<AtendimentoDTO> updateAtendimento(@RequestBody AtendimentoDTO atendimentoDTO) throws URISyntaxException {
         log.debug("REST request to update Atendimento : {}", atendimentoDTO);
         if (atendimentoDTO.getId() == null) {
             return createAtendimento(atendimentoDTO);

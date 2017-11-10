@@ -5,7 +5,6 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -26,8 +25,7 @@ public class Atendimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Column(name = "medico", nullable = false)
+    @Column(name = "medico")
     private String medico;
 
     @Column(name = "numero_cartao")
@@ -74,6 +72,10 @@ public class Atendimento implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Procedimento procedimento;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Medico medico;
 
     @OneToMany(mappedBy = "atendimento")
     @JsonIgnore
@@ -283,6 +285,19 @@ public class Atendimento implements Serializable {
         this.procedimento = procedimento;
     }
 
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public Atendimento medico(Medico medico) {
+        this.medico = medico;
+        return this;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
     public Set<Sessao> getSessaos() {
         return sessaos;
     }
@@ -306,14 +321,6 @@ public class Atendimento implements Serializable {
 
     public void setSessaos(Set<Sessao> sessaos) {
         this.sessaos = sessaos;
-    }
-
-    @Transient
-    public Integer getSessoesRestantes() {
-        Integer saldo = quantidadeSessoes != null ? quantidadeSessoes : 0;
-        saldo -= getSessaos() != null ? getSessaos().size() : 0;
-
-        return saldo;
     }
 
     @Override

@@ -23,7 +23,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="medico" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="numero_cartao" type="varchar(255)">
@@ -74,6 +74,8 @@
             </column>            <column name="pessoa_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>            <column name="procedimento_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="medico_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

@@ -5,9 +5,9 @@
         .module('fisioacusApp')
         .controller('AtendimentoMySuffixDetailController', AtendimentoMySuffixDetailController);
 
-    AtendimentoMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Atendimento', 'Convenio', 'Pessoa', 'Procedimento', 'Sessao'];
+    AtendimentoMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Atendimento', 'Convenio', 'Pessoa', 'Procedimento', 'Medico', 'Sessao'];
 
-    function AtendimentoMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Atendimento, Convenio, Pessoa, Procedimento, Sessao) {
+    function AtendimentoMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Atendimento, Convenio, Pessoa, Procedimento, Medico, Sessao) {
         var vm = this;
 
         vm.atendimento = entity;

@@ -44,10 +44,6 @@
         <dd>
             <span>{{vm.atendimento.quantidadeSessoes}}</span>
         </dd>
-        <dt><span data-translate="fisioacusApp.atendimento.sessoesRestantes">Sessões Restantes</span></dt>
-        <dd>
-            <span>{{vm.atendimento.sessoesRestantes}}</span>
-        </dd>
         <dt><span data-translate="fisioacusApp.atendimento.observacao">Observacao</span></dt>
         <dd>
             <span>{{vm.atendimento.observacao}}</span>
@@ -67,6 +63,10 @@
         <dt><span data-translate="fisioacusApp.atendimento.procedimento">Procedimento</span></dt>
         <dd>
             <a ui-sref="procedimento-my-suffix-detail({id:vm.atendimento.procedimentoId})">{{vm.atendimento.procedimentoDescricao}}</a>
+        </dd>
+        <dt><span data-translate="fisioacusApp.atendimento.medico">Medico</span></dt>
+        <dd>
+            <a ui-sref="medico-detail({id:vm.atendimento.medicoId})">{{vm.atendimento.medicoNome}}</a>
         </dd>
     </dl>
 

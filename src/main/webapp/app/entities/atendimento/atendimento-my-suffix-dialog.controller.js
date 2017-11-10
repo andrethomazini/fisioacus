@@ -5,9 +5,9 @@
         .module('fisioacusApp')
         .controller('AtendimentoMySuffixDialogController', AtendimentoMySuffixDialogController);
 
-    AtendimentoMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Atendimento', 'Convenio', 'Pessoa', 'Procedimento', 'Sessao'];
+    AtendimentoMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Atendimento', 'Convenio', 'Pessoa', 'Procedimento', 'Medico', 'Sessao'];
 
-    function AtendimentoMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Atendimento, Convenio, Pessoa, Procedimento, Sessao) {
+    function AtendimentoMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Atendimento, Convenio, Pessoa, Procedimento, Medico, Sessao) {
         var vm = this;
 
         vm.atendimento = entity;
@@ -41,6 +41,15 @@
             return Procedimento.get({id : vm.atendimento.procedimentoId}).$promise;
         }).then(function(procedimento) {
             vm.procedimentos.push(procedimento);
+        });
+        vm.medicos = Medico.query({filter: 'atendimento-is-null'});
+        $q.all([vm.atendimento.$promise, vm.medicos.$promise]).then(function() {
+            if (!vm.atendimento.medicoId) {
+                return $q.reject();
+            }
+            return Medico.get({id : vm.atendimento.medicoId}).$promise;
+        }).then(function(medico) {
+            vm.medicos.push(medico);
         });
         vm.sessaos = Sessao.query();
 

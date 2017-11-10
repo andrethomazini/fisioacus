@@ -2,7 +2,6 @@ package com.fisioacus.service.dto;
 
 
 import java.time.LocalDate;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +14,6 @@ public class AtendimentoDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String medico;
 
     private String numeroCartao;
@@ -52,7 +50,9 @@ public class AtendimentoDTO implements Serializable {
 
     private String procedimentoDescricao;
 
-    private Integer sessoesRestantes;
+    private Long medicoId;
+
+    private String medicoNome;
 
     public Long getId() {
         return id;
@@ -206,12 +206,20 @@ public class AtendimentoDTO implements Serializable {
         this.procedimentoDescricao = procedimentoDescricao;
     }
 
-    public Integer getSessoesRestantes() {
-        return sessoesRestantes;
+    public Long getMedicoId() {
+        return medicoId;
     }
 
-    public void setSessoesRestantes(Integer sessoesRestantes) {
-        this.sessoesRestantes = sessoesRestantes;
+    public void setMedicoId(Long medicoId) {
+        this.medicoId = medicoId;
+    }
+
+    public String getMedicoNome() {
+        return medicoNome;
+    }
+
+    public void setMedicoNome(String medicoNome) {
+        this.medicoNome = medicoNome;
     }
 
     @Override
@@ -251,8 +259,6 @@ public class AtendimentoDTO implements Serializable {
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
             ", observacao='" + getObservacao() + "'" +
             ", cid='" + getCid() + "'" +
-            ", sessoesRestantes='" + getSessoesRestantes() + "'" +
             "}";
     }
-
 }

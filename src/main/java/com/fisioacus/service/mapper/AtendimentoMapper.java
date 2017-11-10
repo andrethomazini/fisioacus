@@ -8,7 +8,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Atendimento and its DTO AtendimentoDTO.
  */
-@Mapper(componentModel = "spring", uses = {ConvenioMapper.class, PessoaMapper.class, ProcedimentoMapper.class, })
+@Mapper(componentModel = "spring", uses = {ConvenioMapper.class, PessoaMapper.class, ProcedimentoMapper.class, MedicoMapper.class, })
 public interface AtendimentoMapper extends EntityMapper <AtendimentoDTO, Atendimento> {
 
     @Mapping(source = "convenio.id", target = "convenioId")
@@ -19,6 +19,9 @@ public interface AtendimentoMapper extends EntityMapper <AtendimentoDTO, Atendim
 
     @Mapping(source = "procedimento.id", target = "procedimentoId")
     @Mapping(source = "procedimento.descricao", target = "procedimentoDescricao")
+
+    @Mapping(source = "medico.id", target = "medicoId")
+    @Mapping(source = "medico.nome", target = "medicoNome")
     AtendimentoDTO toDto(Atendimento atendimento); 
 
     @Mapping(source = "convenioId", target = "convenio")
@@ -26,6 +29,8 @@ public interface AtendimentoMapper extends EntityMapper <AtendimentoDTO, Atendim
     @Mapping(source = "pessoaId", target = "pessoa")
 
     @Mapping(source = "procedimentoId", target = "procedimento")
+
+    @Mapping(source = "medicoId", target = "medico")
     @Mapping(target = "sessaos", ignore = true)
     Atendimento toEntity(AtendimentoDTO atendimentoDTO); 
     default Atendimento fromId(Long id) {

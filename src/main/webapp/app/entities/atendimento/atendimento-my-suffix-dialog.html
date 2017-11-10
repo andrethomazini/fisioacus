@@ -1,5 +1,5 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -17,13 +17,7 @@
             <label class="control-label" data-translate="fisioacusApp.atendimento.medico" for="field_medico">Medico</label>
             <input type="text" class="form-control" name="medico" id="field_medico"
                     ng-model="vm.atendimento.medico"
-                    required/>
-            <div ng-show="editForm.medico.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.medico.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
+                    />
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.numeroCartao" for="field_numeroCartao">Numero Cartao</label>
@@ -114,6 +108,12 @@
         <div class="form-group">
             <label data-translate="fisioacusApp.atendimento.procedimento" for="field_procedimento">Procedimento</label>
             <select class="form-control" id="field_procedimento" name="procedimento" ng-model="vm.atendimento.procedimentoId" ng-options="procedimento.id as procedimento.descricao for procedimento in vm.procedimentos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="fisioacusApp.atendimento.medico" for="field_medico">Medico</label>
+            <select class="form-control" id="field_medico" name="medico" ng-model="vm.atendimento.medicoId" ng-options="medico.id as medico.nome for medico in vm.medicos | orderBy:'id'">
                 <option value=""></option>
             </select>
         </div>

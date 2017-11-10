@@ -193,25 +193,6 @@ public class AtendimentoResourceIntTest {
 
     @Test
     @Transactional
-    public void checkMedicoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = atendimentoRepository.findAll().size();
-        // set the field null
-        atendimento.setMedico(null);
-
-        // Create the Atendimento, which fails.
-        AtendimentoDTO atendimentoDTO = atendimentoMapper.toDto(atendimento);
-
-        restAtendimentoMockMvc.perform(post("/api/atendimentos")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(atendimentoDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Atendimento> atendimentoList = atendimentoRepository.findAll();
-        assertThat(atendimentoList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllAtendimentos() throws Exception {
         // Initialize the database
         atendimentoRepository.saveAndFlush(atendimento);
