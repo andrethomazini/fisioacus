@@ -75,6 +75,9 @@ public class AtendimentoResourceIntTest {
     private static final String DEFAULT_OBSERVACAO = "AAAAAAAAAA";
     private static final String UPDATED_OBSERVACAO = "BBBBBBBBBB";
 
+    private static final String DEFAULT_CID = "AAAAAAAAAA";
+    private static final String UPDATED_CID = "BBBBBBBBBB";
+
     @Autowired
     private AtendimentoRepository atendimentoRepository;
 
@@ -128,7 +131,8 @@ public class AtendimentoResourceIntTest {
             .numeroAutenticador(DEFAULT_NUMERO_AUTENTICADOR)
             .dtTermino(DEFAULT_DT_TERMINO)
             .quantidadeSessoes(DEFAULT_QUANTIDADE_SESSOES)
-            .observacao(DEFAULT_OBSERVACAO);
+            .observacao(DEFAULT_OBSERVACAO)
+            .cid(DEFAULT_CID);
         return atendimento;
     }
 
@@ -164,6 +168,7 @@ public class AtendimentoResourceIntTest {
         assertThat(testAtendimento.getDtTermino()).isEqualTo(DEFAULT_DT_TERMINO);
         assertThat(testAtendimento.getQuantidadeSessoes()).isEqualTo(DEFAULT_QUANTIDADE_SESSOES);
         assertThat(testAtendimento.getObservacao()).isEqualTo(DEFAULT_OBSERVACAO);
+        assertThat(testAtendimento.getCid()).isEqualTo(DEFAULT_CID);
     }
 
     @Test
@@ -226,7 +231,8 @@ public class AtendimentoResourceIntTest {
             .andExpect(jsonPath("$.[*].numeroAutenticador").value(hasItem(DEFAULT_NUMERO_AUTENTICADOR.toString())))
             .andExpect(jsonPath("$.[*].dtTermino").value(hasItem(DEFAULT_DT_TERMINO.toString())))
             .andExpect(jsonPath("$.[*].quantidadeSessoes").value(hasItem(DEFAULT_QUANTIDADE_SESSOES)))
-            .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO.toString())));
+            .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO.toString())))
+            .andExpect(jsonPath("$.[*].cid").value(hasItem(DEFAULT_CID.toString())));
     }
 
     @Test
@@ -250,7 +256,8 @@ public class AtendimentoResourceIntTest {
             .andExpect(jsonPath("$.numeroAutenticador").value(DEFAULT_NUMERO_AUTENTICADOR.toString()))
             .andExpect(jsonPath("$.dtTermino").value(DEFAULT_DT_TERMINO.toString()))
             .andExpect(jsonPath("$.quantidadeSessoes").value(DEFAULT_QUANTIDADE_SESSOES))
-            .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO.toString()));
+            .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO.toString()))
+            .andExpect(jsonPath("$.cid").value(DEFAULT_CID.toString()));
     }
 
     @Test
@@ -281,7 +288,8 @@ public class AtendimentoResourceIntTest {
             .numeroAutenticador(UPDATED_NUMERO_AUTENTICADOR)
             .dtTermino(UPDATED_DT_TERMINO)
             .quantidadeSessoes(UPDATED_QUANTIDADE_SESSOES)
-            .observacao(UPDATED_OBSERVACAO);
+            .observacao(UPDATED_OBSERVACAO)
+            .cid(UPDATED_CID);
         AtendimentoDTO atendimentoDTO = atendimentoMapper.toDto(updatedAtendimento);
 
         restAtendimentoMockMvc.perform(put("/api/atendimentos")
@@ -304,6 +312,7 @@ public class AtendimentoResourceIntTest {
         assertThat(testAtendimento.getDtTermino()).isEqualTo(UPDATED_DT_TERMINO);
         assertThat(testAtendimento.getQuantidadeSessoes()).isEqualTo(UPDATED_QUANTIDADE_SESSOES);
         assertThat(testAtendimento.getObservacao()).isEqualTo(UPDATED_OBSERVACAO);
+        assertThat(testAtendimento.getCid()).isEqualTo(UPDATED_CID);
     }
 
     @Test

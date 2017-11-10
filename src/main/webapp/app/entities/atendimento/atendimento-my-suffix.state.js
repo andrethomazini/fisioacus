@@ -135,6 +135,7 @@
                                 dtTermino: null,
                                 quantidadeSessoes: null,
                                 observacao: null,
+                                cid: null,
                                 id: null
                             };
                         }

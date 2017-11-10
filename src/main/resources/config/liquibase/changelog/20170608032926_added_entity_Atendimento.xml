@@ -65,6 +65,10 @@
             <column name="observacao" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+
+            <column name="cid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="convenio_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>            <column name="pessoa_id" type="bigint">

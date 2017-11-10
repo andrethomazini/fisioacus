@@ -38,6 +38,8 @@ public class AtendimentoDTO implements Serializable {
 
     private String observacao;
 
+    private String cid;
+
     private Long convenioId;
 
     private String convenioDescricao;
@@ -49,8 +51,6 @@ public class AtendimentoDTO implements Serializable {
     private Long procedimentoId;
 
     private String procedimentoDescricao;
-
-    private Integer sessoesRestantes;
 
     public Long getId() {
         return id;
@@ -148,6 +148,14 @@ public class AtendimentoDTO implements Serializable {
         this.observacao = observacao;
     }
 
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
+    }
+
     public Long getConvenioId() {
         return convenioId;
     }
@@ -196,14 +204,6 @@ public class AtendimentoDTO implements Serializable {
         this.procedimentoDescricao = procedimentoDescricao;
     }
 
-    public Integer getSessoesRestantes() {
-        return sessoesRestantes;
-    }
-
-    public void setSessoesRestantes(Integer sessoesRestantes) {
-        this.sessoesRestantes = sessoesRestantes;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -240,8 +240,7 @@ public class AtendimentoDTO implements Serializable {
             ", dtTermino='" + getDtTermino() + "'" +
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
             ", observacao='" + getObservacao() + "'" +
-            ", sessoesRestantes='" + getSessoesRestantes() + "'" +
+            ", cid='" + getCid() + "'" +
             "}";
     }
-
 }

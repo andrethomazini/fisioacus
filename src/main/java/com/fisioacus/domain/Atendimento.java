@@ -60,6 +60,9 @@ public class Atendimento implements Serializable {
     @Column(name = "observacao")
     private String observacao;
 
+    @Column(name = "cid")
+    private String cid;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Convenio convenio;
@@ -228,6 +231,19 @@ public class Atendimento implements Serializable {
         this.observacao = observacao;
     }
 
+    public String getCid() {
+        return cid;
+    }
+
+    public Atendimento cid(String cid) {
+        this.cid = cid;
+        return this;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
+    }
+
     public Convenio getConvenio() {
         return convenio;
     }
@@ -292,14 +308,6 @@ public class Atendimento implements Serializable {
         this.sessaos = sessaos;
     }
 
-    @Transient
-    public Integer getSessoesRestantes() {
-        Integer saldo = quantidadeSessoes != null ? quantidadeSessoes : 0;
-        saldo -= getSessaos() != null ? getSessaos().size() : 0;
-
-        return saldo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -335,6 +343,7 @@ public class Atendimento implements Serializable {
             ", dtTermino='" + getDtTermino() + "'" +
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
             ", observacao='" + getObservacao() + "'" +
+            ", cid='" + getCid() + "'" +
             "}";
     }
 }

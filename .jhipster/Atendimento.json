@@ -79,6 +79,10 @@
         {
             "fieldName": "observacao",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "cid",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170608032926",
