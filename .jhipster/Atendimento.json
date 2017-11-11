@@ -26,6 +26,14 @@
             "otherEntityRelationshipName": "atendimento"
         },
         {
+            "relationshipType": "one-to-one",
+            "relationshipName": "medico",
+            "otherEntityName": "medico",
+            "otherEntityField": "nome",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "atendimento"
+        },
+        {
             "relationshipType": "one-to-many",
             "relationshipName": "sessao",
             "otherEntityName": "sessao",
@@ -35,10 +43,7 @@
     "fields": [
         {
             "fieldName": "medico",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldType": "String"
         },
         {
             "fieldName": "numeroCartao",

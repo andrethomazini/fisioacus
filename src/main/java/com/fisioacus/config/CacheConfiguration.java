@@ -50,6 +50,8 @@ public class CacheConfiguration {
             cm.createCache(com.fisioacus.domain.Convenio.class.getName(), jcacheConfiguration);
             cm.createCache(com.fisioacus.domain.Atendimento.class.getName(), jcacheConfiguration);
             cm.createCache(com.fisioacus.domain.Atendimento.class.getName() + ".sessaos", jcacheConfiguration);
+            cm.createCache(com.fisioacus.domain.Medico.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fisioacus.domain.Especialidade.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

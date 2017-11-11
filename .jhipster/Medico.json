@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "especialidade",
+            "otherEntityName": "especialidade",
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": [],
+            "otherEntityField": "descricao",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "medico"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "crm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contato",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171111011700",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "medico",
+    "pagination": "pager"
+}

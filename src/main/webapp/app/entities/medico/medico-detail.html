@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="fisioacusApp.medico.detail.title">Medico</span> {{vm.medico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="fisioacusApp.medico.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.medico.nome}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.medico.crm">Crm</span></dt>
+        <dd>
+            <span>{{vm.medico.crm}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.medico.telefone">Telefone</span></dt>
+        <dd>
+            <span>{{vm.medico.telefone}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.medico.contato">Contato</span></dt>
+        <dd>
+            <span>{{vm.medico.contato}}</span>
+        </dd>
+        <dt><span data-translate="fisioacusApp.medico.especialidade">Especialidade</span></dt>
+        <dd>
+            <a ui-sref="especialidade-detail({id:vm.medico.especialidadeId})">{{vm.medico.especialidadeDescricao}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="medico-detail.edit({id:vm.medico.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
