@@ -124,7 +124,6 @@
                     resolve: {
                         entity: function () {
                             return {
-                                medico: null,
                                 numeroCartao: null,
                                 desconto: null,
                                 valor: null,

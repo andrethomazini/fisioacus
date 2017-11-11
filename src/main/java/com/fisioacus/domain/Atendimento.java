@@ -25,9 +25,6 @@ public class Atendimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "medico")
-    private String medico;
-
     @Column(name = "numero_cartao")
     private String numeroCartao;
 
@@ -88,19 +85,6 @@ public class Atendimento implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public Atendimento medico(String medico) {
-        this.medico = medico;
-        return this;
-    }
-
-    public void setMedico(String medico) {
-        this.medico = medico;
     }
 
     public String getNumeroCartao() {
@@ -323,14 +307,6 @@ public class Atendimento implements Serializable {
         this.sessaos = sessaos;
     }
 
-    @Transient
-    public Integer getSessoesRestantes() {
-        Integer saldo = quantidadeSessoes != null ? quantidadeSessoes : 0;
-        saldo -= getSessaos() != null ? getSessaos().size() : 0;
-
-        return saldo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -355,7 +331,6 @@ public class Atendimento implements Serializable {
     public String toString() {
         return "Atendimento{" +
             "id=" + getId() +
-            ", medico='" + getMedico() + "'" +
             ", numeroCartao='" + getNumeroCartao() + "'" +
             ", desconto='" + isDesconto() + "'" +
             ", valor='" + getValor() + "'" +

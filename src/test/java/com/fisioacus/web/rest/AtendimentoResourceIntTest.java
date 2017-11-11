@@ -42,9 +42,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = FisioacusApp.class)
 public class AtendimentoResourceIntTest {
 
-    private static final String DEFAULT_MEDICO = "AAAAAAAAAA";
-    private static final String UPDATED_MEDICO = "BBBBBBBBBB";
-
     private static final String DEFAULT_NUMERO_CARTAO = "AAAAAAAAAA";
     private static final String UPDATED_NUMERO_CARTAO = "BBBBBBBBBB";
 
@@ -121,7 +118,6 @@ public class AtendimentoResourceIntTest {
      */
     public static Atendimento createEntity(EntityManager em) {
         Atendimento atendimento = new Atendimento()
-            .medico(DEFAULT_MEDICO)
             .numeroCartao(DEFAULT_NUMERO_CARTAO)
             .desconto(DEFAULT_DESCONTO)
             .valor(DEFAULT_VALOR)
@@ -157,7 +153,6 @@ public class AtendimentoResourceIntTest {
         List<Atendimento> atendimentoList = atendimentoRepository.findAll();
         assertThat(atendimentoList).hasSize(databaseSizeBeforeCreate + 1);
         Atendimento testAtendimento = atendimentoList.get(atendimentoList.size() - 1);
-        assertThat(testAtendimento.getMedico()).isEqualTo(DEFAULT_MEDICO);
         assertThat(testAtendimento.getNumeroCartao()).isEqualTo(DEFAULT_NUMERO_CARTAO);
         assertThat(testAtendimento.isDesconto()).isEqualTo(DEFAULT_DESCONTO);
         assertThat(testAtendimento.getValor()).isEqualTo(DEFAULT_VALOR);
@@ -202,7 +197,6 @@ public class AtendimentoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(atendimento.getId().intValue())))
-            .andExpect(jsonPath("$.[*].medico").value(hasItem(DEFAULT_MEDICO.toString())))
             .andExpect(jsonPath("$.[*].numeroCartao").value(hasItem(DEFAULT_NUMERO_CARTAO.toString())))
             .andExpect(jsonPath("$.[*].desconto").value(hasItem(DEFAULT_DESCONTO.booleanValue())))
             .andExpect(jsonPath("$.[*].valor").value(hasItem(DEFAULT_VALOR.doubleValue())))
@@ -227,7 +221,6 @@ public class AtendimentoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(atendimento.getId().intValue()))
-            .andExpect(jsonPath("$.medico").value(DEFAULT_MEDICO.toString()))
             .andExpect(jsonPath("$.numeroCartao").value(DEFAULT_NUMERO_CARTAO.toString()))
             .andExpect(jsonPath("$.desconto").value(DEFAULT_DESCONTO.booleanValue()))
             .andExpect(jsonPath("$.valor").value(DEFAULT_VALOR.doubleValue()))
@@ -259,7 +252,6 @@ public class AtendimentoResourceIntTest {
         // Update the atendimento
         Atendimento updatedAtendimento = atendimentoRepository.findOne(atendimento.getId());
         updatedAtendimento
-            .medico(UPDATED_MEDICO)
             .numeroCartao(UPDATED_NUMERO_CARTAO)
             .desconto(UPDATED_DESCONTO)
             .valor(UPDATED_VALOR)
@@ -282,7 +274,6 @@ public class AtendimentoResourceIntTest {
         List<Atendimento> atendimentoList = atendimentoRepository.findAll();
         assertThat(atendimentoList).hasSize(databaseSizeBeforeUpdate);
         Atendimento testAtendimento = atendimentoList.get(atendimentoList.size() - 1);
-        assertThat(testAtendimento.getMedico()).isEqualTo(UPDATED_MEDICO);
         assertThat(testAtendimento.getNumeroCartao()).isEqualTo(UPDATED_NUMERO_CARTAO);
         assertThat(testAtendimento.isDesconto()).isEqualTo(UPDATED_DESCONTO);
         assertThat(testAtendimento.getValor()).isEqualTo(UPDATED_VALOR);

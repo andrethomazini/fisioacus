@@ -42,10 +42,6 @@
     ],
     "fields": [
         {
-            "fieldName": "medico",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "numeroCartao",
             "fieldType": "String"
         },

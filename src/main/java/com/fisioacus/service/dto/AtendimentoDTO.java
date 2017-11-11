@@ -14,8 +14,6 @@ public class AtendimentoDTO implements Serializable {
 
     private Long id;
 
-    private String medico;
-
     private String numeroCartao;
 
     private Boolean desconto;
@@ -54,22 +52,12 @@ public class AtendimentoDTO implements Serializable {
 
     private String medicoNome;
 
-    private Integer sessoesRestantes;
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public void setMedico(String medico) {
-        this.medico = medico;
     }
 
     public String getNumeroCartao() {
@@ -224,14 +212,6 @@ public class AtendimentoDTO implements Serializable {
         this.medicoNome = medicoNome;
     }
 
-    public Integer getSessoesRestantes() {
-        return sessoesRestantes;
-    }
-
-    public void setSessoesRestantes(Integer sessoesRestantes) {
-        this.sessoesRestantes = sessoesRestantes;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -257,7 +237,6 @@ public class AtendimentoDTO implements Serializable {
     public String toString() {
         return "AtendimentoDTO{" +
             "id=" + getId() +
-            ", medico='" + getMedico() + "'" +
             ", numeroCartao='" + getNumeroCartao() + "'" +
             ", desconto='" + isDesconto() + "'" +
             ", valor='" + getValor() + "'" +
@@ -269,8 +248,6 @@ public class AtendimentoDTO implements Serializable {
             ", quantidadeSessoes='" + getQuantidadeSessoes() + "'" +
             ", observacao='" + getObservacao() + "'" +
             ", cid='" + getCid() + "'" +
-            ", sessoesRestantes='" + getSessoesRestantes() + "'" +
             "}";
     }
-
 }
