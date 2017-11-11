@@ -67,7 +67,7 @@ class ProcedimentoGatlingTest extends Simulation {
             .exec(http("Create new procedimento")
             .post("/api/procedimentos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "duration":"0", "cid":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "duration":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_procedimento_url"))).exitHereIfFailed
             .pause(10)

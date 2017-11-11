@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.procedimento.duration" for="field_duration">Duration</label>
-            <input type="number" class="form-control" name="duration" id="field_duration" min="1" max="300x"
+            <input type="number" class="form-control" name="duration" id="field_duration"
                     ng-model="vm.procedimento.duration"
                     required/>
             <div ng-show="editForm.duration.$invalid">
@@ -38,18 +38,6 @@
                 <p class="help-block"
                     ng-show="editForm.duration.$error.number" data-translate="entity.validation.number">
                     This field should be a number.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="fisioacusApp.procedimento.cid" for="field_cid">Cid</label>
-            <input type="text" class="form-control" name="cid" id="field_cid"
-                    ng-model="vm.procedimento.cid"
-                    required/>
-            <div ng-show="editForm.cid.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.cid.$error.required" data-translate="entity.validation.required">
-                    This field is required.
                 </p>
             </div>
         </div>

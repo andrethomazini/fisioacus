@@ -126,7 +126,6 @@
                             return {
                                 descricao: null,
                                 duration: null,
-                                cid: null,
                                 id: null
                             };
                         }

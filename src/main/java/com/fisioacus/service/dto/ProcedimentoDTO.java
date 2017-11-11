@@ -18,9 +18,6 @@ public class ProcedimentoDTO implements Serializable {
     @NotNull
     private Integer duration;
 
-    @NotNull
-    private String cid;
-
     public Long getId() {
         return id;
     }
@@ -43,14 +40,6 @@ public class ProcedimentoDTO implements Serializable {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
-    }
-
-    public String getCid() {
-        return cid;
-    }
-
-    public void setCid(String cid) {
-        this.cid = cid;
     }
 
     @Override
@@ -80,7 +69,6 @@ public class ProcedimentoDTO implements Serializable {
             "id=" + getId() +
             ", descricao='" + getDescricao() + "'" +
             ", duration='" + getDuration() + "'" +
-            ", cid='" + getCid() + "'" +
             "}";
     }
 }

@@ -14,10 +14,34 @@
                     ng-model="vm.atendimento.id" readonly />
         </div>
         <div class="form-group">
+            <label data-translate="fisioacusApp.atendimento.pessoa" for="field_pessoa">Pessoa</label>
+            <select class="form-control" id="field_pessoa" name="pessoa" ng-model="vm.atendimento.pessoaId" ng-options="pessoa.id as pessoa.nome for pessoa in vm.pessoas | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="fisioacusApp.atendimento.convenio" for="field_convenio">Convenio</label>
+            <select class="form-control" id="field_convenio" name="convenio" ng-model="vm.atendimento.convenioId" ng-options="convenio.id as convenio.descricao for convenio in vm.convenios | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.numeroCartao" for="field_numeroCartao">Numero Cartao</label>
             <input type="text" class="form-control" name="numeroCartao" id="field_numeroCartao"
                     ng-model="vm.atendimento.numeroCartao"
                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="fisioacusApp.atendimento.numeroAutenticador" for="field_numeroAutenticador">Numero Autenticador</label>
+            <input type="text" class="form-control" name="numeroAutenticador" id="field_numeroAutenticador"
+                   ng-model="vm.atendimento.numeroAutenticador"
+                />
+        </div>
+        <div class="form-group">
+            <label data-translate="fisioacusApp.atendimento.medico" for="field_medico">Medico</label>
+            <select class="form-control" id="field_medico" name="medico" ng-model="vm.atendimento.medicoId" ng-options="medico.id as medico.nome for medico in vm.medicos | orderBy:'id'">
+                <option value=""></option>
+            </select>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.desconto" for="field_desconto">Desconto</label>
@@ -53,12 +77,6 @@
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="fisioacusApp.atendimento.numeroAutenticador" for="field_numeroAutenticador">Numero Autenticador</label>
-            <input type="text" class="form-control" name="numeroAutenticador" id="field_numeroAutenticador"
-                    ng-model="vm.atendimento.numeroAutenticador"
-                    />
-        </div>
-        <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.dtTermino" for="field_dtTermino">Dt Termino</label>
                 <div class="input-group">
                     <input id="field_dtTermino" type="text" class="form-control" name="dtTermino" uib-datepicker-popup="{{dateformat}}" ng-model="vm.atendimento.dtTermino" is-open="vm.datePickerOpenStatus.dtTermino"
@@ -86,28 +104,9 @@
                     ng-model="vm.atendimento.cid"
                     />
         </div>
-
-        <div class="form-group">
-            <label data-translate="fisioacusApp.atendimento.convenio" for="field_convenio">Convenio</label>
-            <select class="form-control" id="field_convenio" name="convenio" ng-model="vm.atendimento.convenioId" ng-options="convenio.id as convenio.descricao for convenio in vm.convenios | orderBy:'id'">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label data-translate="fisioacusApp.atendimento.pessoa" for="field_pessoa">Pessoa</label>
-            <select class="form-control" id="field_pessoa" name="pessoa" ng-model="vm.atendimento.pessoaId" ng-options="pessoa.id as pessoa.nome for pessoa in vm.pessoas | orderBy:'id'">
-                <option value=""></option>
-            </select>
-        </div>
         <div class="form-group">
             <label data-translate="fisioacusApp.atendimento.procedimento" for="field_procedimento">Procedimento</label>
             <select class="form-control" id="field_procedimento" name="procedimento" ng-model="vm.atendimento.procedimentoId" ng-options="procedimento.id as procedimento.descricao for procedimento in vm.procedimentos | orderBy:'id'">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label data-translate="fisioacusApp.atendimento.medico" for="field_medico">Medico</label>
-            <select class="form-control" id="field_medico" name="medico" ng-model="vm.atendimento.medicoId" ng-options="medico.id as medico.nome for medico in vm.medicos | orderBy:'id'">
                 <option value=""></option>
             </select>
         </div>

@@ -15,19 +15,12 @@
             "fieldValidateRules": [
                 "required"
             ]
-        },
-        {
-            "fieldName": "cid",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
         }
     ],
     "changelogDate": "20170608032923",
-    "entityTableName": "procedimento",
     "dto": "mapstruct",
-    "pagination": "pagination",
     "service": "serviceImpl",
+    "entityTableName": "procedimento",
+    "pagination": "pagination",
     "angularJSSuffix": "mySuffix"
 }

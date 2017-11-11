@@ -10,14 +10,13 @@
             "updated": "Um Procedimento é atualizado com o identificador {{ param }}",
             "deleted": "Um Procedimento é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir o Procedimento {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Procedimento {{ id }}?"
             },
             "detail": {
                 "title": "Procedimento"
             },
-            "descricao": "Descrição",
-            "duration": "Duração",
-            "cid": "CID"
+            "descricao": "Descricao",
+            "duration": "Duration"
         }
     }
 }

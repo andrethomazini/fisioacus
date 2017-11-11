@@ -30,10 +30,6 @@ public class Procedimento implements Serializable {
     @Column(name = "duration", nullable = false)
     private Integer duration;
 
-    @NotNull
-    @Column(name = "cid", nullable = false)
-    private String cid;
-
     public Long getId() {
         return id;
     }
@@ -68,19 +64,6 @@ public class Procedimento implements Serializable {
         this.duration = duration;
     }
 
-    public String getCid() {
-        return cid;
-    }
-
-    public Procedimento cid(String cid) {
-        this.cid = cid;
-        return this;
-    }
-
-    public void setCid(String cid) {
-        this.cid = cid;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -107,7 +90,6 @@ public class Procedimento implements Serializable {
             "id=" + getId() +
             ", descricao='" + getDescricao() + "'" +
             ", duration='" + getDuration() + "'" +
-            ", cid='" + getCid() + "'" +
             "}";
     }
 }

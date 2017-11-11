@@ -46,9 +46,6 @@ public class ProcedimentoResourceIntTest {
     private static final Integer DEFAULT_DURATION = 1;
     private static final Integer UPDATED_DURATION = 2;
 
-    private static final String DEFAULT_CID = "AAAAAAAAAA";
-    private static final String UPDATED_CID = "BBBBBBBBBB";
-
     @Autowired
     private ProcedimentoRepository procedimentoRepository;
 
@@ -93,8 +90,7 @@ public class ProcedimentoResourceIntTest {
     public static Procedimento createEntity(EntityManager em) {
         Procedimento procedimento = new Procedimento()
             .descricao(DEFAULT_DESCRICAO)
-            .duration(DEFAULT_DURATION)
-            .cid(DEFAULT_CID);
+            .duration(DEFAULT_DURATION);
         return procedimento;
     }
 
@@ -121,7 +117,6 @@ public class ProcedimentoResourceIntTest {
         Procedimento testProcedimento = procedimentoList.get(procedimentoList.size() - 1);
         assertThat(testProcedimento.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
         assertThat(testProcedimento.getDuration()).isEqualTo(DEFAULT_DURATION);
-        assertThat(testProcedimento.getCid()).isEqualTo(DEFAULT_CID);
     }
 
     @Test
@@ -184,25 +179,6 @@ public class ProcedimentoResourceIntTest {
 
     @Test
     @Transactional
-    public void checkCidIsRequired() throws Exception {
-        int databaseSizeBeforeTest = procedimentoRepository.findAll().size();
-        // set the field null
-        procedimento.setCid(null);
-
-        // Create the Procedimento, which fails.
-        ProcedimentoDTO procedimentoDTO = procedimentoMapper.toDto(procedimento);
-
-        restProcedimentoMockMvc.perform(post("/api/procedimentos")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(procedimentoDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Procedimento> procedimentoList = procedimentoRepository.findAll();
-        assertThat(procedimentoList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllProcedimentos() throws Exception {
         // Initialize the database
         procedimentoRepository.saveAndFlush(procedimento);
@@ -213,8 +189,7 @@ public class ProcedimentoResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(procedimento.getId().intValue())))
             .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
-            .andExpect(jsonPath("$.[*].duration").value(hasItem(DEFAULT_DURATION)))
-            .andExpect(jsonPath("$.[*].cid").value(hasItem(DEFAULT_CID.toString())));
+            .andExpect(jsonPath("$.[*].duration").value(hasItem(DEFAULT_DURATION)));
     }
 
     @Test
@@ -229,8 +204,7 @@ public class ProcedimentoResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(procedimento.getId().intValue()))
             .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
-            .andExpect(jsonPath("$.duration").value(DEFAULT_DURATION))
-            .andExpect(jsonPath("$.cid").value(DEFAULT_CID.toString()));
+            .andExpect(jsonPath("$.duration").value(DEFAULT_DURATION));
     }
 
     @Test
@@ -252,8 +226,7 @@ public class ProcedimentoResourceIntTest {
         Procedimento updatedProcedimento = procedimentoRepository.findOne(procedimento.getId());
         updatedProcedimento
             .descricao(UPDATED_DESCRICAO)
-            .duration(UPDATED_DURATION)
-            .cid(UPDATED_CID);
+            .duration(UPDATED_DURATION);
         ProcedimentoDTO procedimentoDTO = procedimentoMapper.toDto(updatedProcedimento);
 
         restProcedimentoMockMvc.perform(put("/api/procedimentos")
@@ -267,7 +240,6 @@ public class ProcedimentoResourceIntTest {
         Procedimento testProcedimento = procedimentoList.get(procedimentoList.size() - 1);
         assertThat(testProcedimento.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
         assertThat(testProcedimento.getDuration()).isEqualTo(UPDATED_DURATION);
-        assertThat(testProcedimento.getCid()).isEqualTo(UPDATED_CID);
     }
 
     @Test
