@@ -35,8 +35,8 @@ public class Medico implements Serializable {
     @Column(name = "contato")
     private String contato;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JoinColumn
     private Especialidade especialidade;
 
     public Long getId() {

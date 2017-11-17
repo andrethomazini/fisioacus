@@ -4,7 +4,7 @@
         {
             "relationshipName": "especialidade",
             "otherEntityName": "especialidade",
-            "relationshipType": "one-to-one",
+            "relationshipType": "many-to-one",
             "relationshipValidateRules": [],
             "otherEntityField": "descricao",
             "ownerSide": true,

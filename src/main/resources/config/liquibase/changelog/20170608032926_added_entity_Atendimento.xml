@@ -66,16 +66,16 @@
                 <constraints nullable="true" />
             </column>
             <column name="convenio_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            <column name="pessoa_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            <column name="procedimento_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>            <column name="medico_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+                <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        
+
     </changeSet>
 </databaseChangeLog>

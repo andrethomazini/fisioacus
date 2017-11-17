@@ -58,20 +58,20 @@ public class Atendimento implements Serializable {
     @Column(name = "cid")
     private String cid;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JoinColumn
     private Convenio convenio;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JoinColumn
     private Pessoa pessoa;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JoinColumn
     private Procedimento procedimento;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JoinColumn
     private Medico medico;
 
     @OneToMany(mappedBy = "atendimento")
