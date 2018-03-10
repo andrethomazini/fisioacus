@@ -98,7 +98,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.pessoa.dtNascimento" for="field_dtNascimento">Dt Nascimento</label>
                 <div class="input-group">
-                    <input id="field_dtNascimento" type="text" class="form-control" name="dtNascimento" uib-datepicker-popup="{{dateformat}}" ng-model="vm.pessoa.dtNascimento" is-open="vm.datePickerOpenStatus.dtNascimento"
+                    <input id="field_dtNascimento" type="date" class="form-control" name="dtNascimento" uib-datepicker-popup="{{dateformat}}" ng-model="vm.pessoa.dtNascimento" is-open="vm.datePickerOpenStatus.dtNascimento"
                     required/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtNascimento')"><i class="glyphicon glyphicon-calendar"></i></button>
