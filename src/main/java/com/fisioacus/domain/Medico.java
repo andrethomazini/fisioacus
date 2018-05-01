@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A Medico.
+ * A Médico.
  */
 @Entity
 @Table(name = "medico")
@@ -134,7 +134,7 @@ public class Medico implements Serializable {
 
     @Override
     public String toString() {
-        return "Medico{" +
+        return "Médico{" +
             "id=" + getId() +
             ", nome='" + getNome() + "'" +
             ", crm='" + getCrm() + "'" +

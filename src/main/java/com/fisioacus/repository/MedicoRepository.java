@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.*;
 
 
 /**
- * Spring Data JPA repository for the Medico entity.
+ * Spring Data JPA repository for the Médico entity.
  */
 @SuppressWarnings("unused")
 @Repository

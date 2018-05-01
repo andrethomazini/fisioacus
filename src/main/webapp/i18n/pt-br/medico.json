@@ -2,21 +2,21 @@
     "fisioacusApp": {
         "medico" : {
             "home": {
-                "title": "Medicos",
-                "createLabel": "Criar novo Medico",
-                "createOrEditLabel": "Criar ou editar Medico"
+                "title": "Médicos",
+                "createLabel": "Criar novo Médico",
+                "createOrEditLabel": "Criar ou editar Médico"
             },
-            "created": "Um novo Medico é criado com o identificador {{ param }}",
-            "updated": "Um Medico é atualizado com o identificador {{ param }}",
-            "deleted": "Um Medico é deletado com o identificador {{ param }}",
+            "created": "Um novo Médico é criado com o código {{ param }}",
+            "updated": "Um Médico é atualizado com o código {{ param }}",
+            "deleted": "Um Médico é deletado com o código {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Medico {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Médico {{ id }}?"
             },
             "detail": {
-                "title": "Medico"
+                "title": "Médico"
             },
             "nome": "Nome",
-            "crm": "Crm",
+            "crm": "CRM",
             "telefone": "Telefone",
             "contato": "Contato",
             "especialidade": "Especialidade"

@@ -1,16 +1,16 @@
 
 <div>
-    <h2><span data-translate="fisioacusApp.sessao.detail.title">Sessao</span> {{vm.sessao.id}}</h2>
+    <h2><span data-translate="fisioacusApp.sessao.detail.title">Sessão</span> {{vm.sessao.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="fisioacusApp.sessao.descricao">Descricao</span></dt>
+        <dt><span data-translate="fisioacusApp.sessao.descricao">Descrição</span></dt>
         <dd>
             <span>{{vm.sessao.descricao}}</span>
         </dd>
-        <dt><span data-translate="fisioacusApp.sessao.dtInicio">Dt Inicio</span></dt>
+        <dt><span data-translate="fisioacusApp.sessao.dtInicio">Dt. Início</span></dt>
         <dd>
-            <span>{{vm.sessao.dtInicio | date:'mediumDate'}}</span>
+            <span>{{vm.sessao.dtInicio | date:'dd/mm/yyyy'}}</span>
         </dd>
         <dt><span data-translate="fisioacusApp.sessao.profissional">Profissional</span></dt>
         <dd>

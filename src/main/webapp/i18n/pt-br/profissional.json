@@ -6,9 +6,9 @@
                 "createLabel": "Criar novo Profissional",
                 "createOrEditLabel": "Criar ou editar Profissional"
             },
-            "created": "Profissional de identificador {{ param }} criado com sucesso",
-            "updated": "Profissional de identificador {{ param }} atualizado com sucesso",
-            "deleted": "Profissional de identificador {{ param }} removido com sucesso",
+            "created": "Profissional de código {{ param }} criado com sucesso",
+            "updated": "Profissional de código {{ param }} atualizado com sucesso",
+            "deleted": "Profissional de código {{ param }} removido com sucesso",
             "delete": {
                 "question": "Tem certeza de que deseja excluir o Profissional {{ pessoaNome }}?"
             },

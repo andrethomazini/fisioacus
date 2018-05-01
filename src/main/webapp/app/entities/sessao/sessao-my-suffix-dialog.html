@@ -22,7 +22,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.sessao.dtInicio" for="field_dtInicio">Dt Inicio</label>
                 <div class="input-group">
-                    <input id="field_dtInicio" type="text" class="form-control" name="dtInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.sessao.dtInicio" is-open="vm.datePickerOpenStatus.dtInicio"
+                    <input id="field_dtInicio" type="date" class="form-control" name="dtInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.sessao.dtInicio" is-open="vm.datePickerOpenStatus.dtInicio"
                     required/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtInicio')"><i class="glyphicon glyphicon-calendar"></i></button>

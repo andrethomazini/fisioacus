@@ -6,11 +6,11 @@
                 "createLabel": "Criar novo Convênio",
                 "createOrEditLabel": "Criar ou editar Convênio"
             },
-            "created": "Um novo Convênio é criado com o identificador {{ param }}",
-            "updated": "Um Convênio é atualizado com o identificador {{ param }}",
-            "deleted": "Um Convênio é deletado com o identificador {{ param }}",
+            "created": "Um novo Convênio é criado com o código {{ param }}",
+            "updated": "Um Convênio é atualizado com o código {{ param }}",
+            "deleted": "Um Convênio é deletado com o código {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Convênio {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Convênio de código {{ id }}?"
             },
             "detail": {
                 "title": "Convênio"

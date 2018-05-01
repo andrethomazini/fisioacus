@@ -6,17 +6,17 @@
                 "createLabel": "Criar novo Procedimento",
                 "createOrEditLabel": "Criar ou editar Procedimento"
             },
-            "created": "Um novo Procedimento é criado com o identificador {{ param }}",
-            "updated": "Um Procedimento é atualizado com o identificador {{ param }}",
-            "deleted": "Um Procedimento é deletado com o identificador {{ param }}",
+            "created": "Um novo Procedimento é criado com o código {{ param }}",
+            "updated": "Um Procedimento é atualizado com o código {{ param }}",
+            "deleted": "Um Procedimento é deletado com o código {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Procedimento {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Procedimento de código {{ id }}?"
             },
             "detail": {
                 "title": "Procedimento"
             },
-            "descricao": "Descricao",
-            "duration": "Duration"
+            "descricao": "Descrição",
+            "duration": "Duração (minutos)"
         }
     }
 }

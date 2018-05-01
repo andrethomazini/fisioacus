@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 /**
- * Service Interface for managing Medico.
+ * Service Interface for managing Médico.
  */
 public interface MedicoService {
 

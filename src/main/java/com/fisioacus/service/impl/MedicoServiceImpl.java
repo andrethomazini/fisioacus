@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * Service Implementation for managing Medico.
+ * Service Implementation for managing Médico.
  */
 @Service
 @Transactional
@@ -39,7 +39,7 @@ public class MedicoServiceImpl implements MedicoService{
      */
     @Override
     public MedicoDTO save(MedicoDTO medicoDTO) {
-        log.debug("Request to save Medico : {}", medicoDTO);
+        log.debug("Request to save Médico : {}", medicoDTO);
         Medico medico = medicoMapper.toEntity(medicoDTO);
         medico = medicoRepository.save(medico);
         return medicoMapper.toDto(medico);
@@ -54,7 +54,7 @@ public class MedicoServiceImpl implements MedicoService{
     @Override
     @Transactional(readOnly = true)
     public Page<MedicoDTO> findAll(Pageable pageable) {
-        log.debug("Request to get all Medicos");
+        log.debug("Request to get all Médicos");
         return medicoRepository.findAll(pageable)
             .map(medicoMapper::toDto);
     }
@@ -68,7 +68,7 @@ public class MedicoServiceImpl implements MedicoService{
     @Override
     @Transactional(readOnly = true)
     public MedicoDTO findOne(Long id) {
-        log.debug("Request to get Medico : {}", id);
+        log.debug("Request to get Médico : {}", id);
         Medico medico = medicoRepository.findOne(id);
         return medicoMapper.toDto(medico);
     }

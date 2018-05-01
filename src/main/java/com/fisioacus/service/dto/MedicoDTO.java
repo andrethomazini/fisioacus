@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A DTO for the Medico entity.
+ * A DTO for the Médico entity.
  */
 public class MedicoDTO implements Serializable {
 

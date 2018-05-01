@@ -69,7 +69,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.dtInicio" for="field_dtInicio">Dt Inicio</label>
                 <div class="input-group">
-                    <input id="field_dtInicio" type="text" class="form-control" name="dtInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.atendimento.dtInicio" is-open="vm.datePickerOpenStatus.dtInicio"
+                    <input id="field_dtInicio" type="date" class="form-control" name="dtInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.atendimento.dtInicio" is-open="vm.datePickerOpenStatus.dtInicio"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtInicio')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -79,7 +79,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="fisioacusApp.atendimento.dtTermino" for="field_dtTermino">Dt Termino</label>
                 <div class="input-group">
-                    <input id="field_dtTermino" type="text" class="form-control" name="dtTermino" uib-datepicker-popup="{{dateformat}}" ng-model="vm.atendimento.dtTermino" is-open="vm.datePickerOpenStatus.dtTermino"
+                    <input id="field_dtTermino" type="date" class="form-control" name="dtTermino" uib-datepicker-popup="{{dateformat}}" ng-model="vm.atendimento.dtTermino" is-open="vm.datePickerOpenStatus.dtTermino"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dtTermino')"><i class="glyphicon glyphicon-calendar"></i></button>

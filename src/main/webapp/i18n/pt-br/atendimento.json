@@ -6,11 +6,11 @@
                 "createLabel": "Criar novo Atendimento",
                 "createOrEditLabel": "Criar ou editar Atendimento"
             },
-            "created": "Um novo Atendimento é criado com o identificador {{ param }}",
-            "updated": "Um Atendimento é atualizado com o identificador {{ param }}",
-            "deleted": "Um Atendimento é deletado com o identificador {{ param }}",
+            "created": "Um novo Atendimento é criado com o código {{ param }}",
+            "updated": "Um Atendimento é atualizado com o código {{ param }}",
+            "deleted": "Um Atendimento é deletado com o código {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Atendimento {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Atendimento de código {{ id }}?"
             },
             "detail": {
                 "title": "Atendimento"
@@ -20,7 +20,7 @@
             "valor": "Valor",
             "queixaPrincipal": "Queixa Principal",
             "hipoteseDiagnostica": "Hipótese Diagnóstica",
-            "dtInicio": "Dt. Inicio",
+            "dtInicio": "Dt. Início",
             "numeroAutenticador": "Número Autenticador",
             "dtTermino": "Dt. Término",
             "quantidadeSessoes": "Quantidade Sessões",

@@ -3,12 +3,12 @@
         "sessao" : {
             "home": {
                 "title": "Sessões",
-                "createLabel": "Criar novo Sessão",
+                "createLabel": "Criar nova Sessão",
                 "createOrEditLabel": "Criar ou editar Sessão"
             },
-            "created": "Um novo Sessão é criado com o identificador {{ param }}",
-            "updated": "Um Sessão é atualizado com o identificador {{ param }}",
-            "deleted": "Um Sessão é deletado com o identificador {{ param }}",
+            "created": "Uma nova Sessão é criada com o código {{ param }}",
+            "updated": "Uma Sessão é atualizada com o código {{ param }}",
+            "deleted": "Uma Sessão é deletada com o código {{ param }}",
             "delete": {
                 "question": "Tem certeza de que deseja excluir a Sessão {{ id }}?"
             },
@@ -16,7 +16,7 @@
                 "title": "Sessão"
             },
             "descricao": "Descrição",
-            "dtInicio": "Dt Inicio",
+            "dtInicio": "Dt. Inicio",
             "profissional": "Profissional",
             "atendimento": "Atendimento"
         }
